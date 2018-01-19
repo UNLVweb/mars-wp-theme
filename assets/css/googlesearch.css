@@ -1,0 +1,355 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/**
+ * Default theme
+ *
+ */
+/* Slight reset to make the preview have ample padding. */
+.cse .gsc-control-cse,
+.gsc-control-cse {
+  padding: 0;
+  width: 90%;
+}
+.cse .gsc-branding,
+.gsc-branding {
+  display: none;
+}
+.cse .gsc-control-cse div,
+.gsc-control-cse div {
+  position: normal;
+}
+/* Selector for entire element. */
+.cse .gsc-control-cse,
+.gsc-control-cse {
+  background-color: transparent !important;
+  border:none !important;
+}
+.cse .gsc-control-cse:after,
+.gsc-control-cse:after {
+  content:".";
+  display:block;
+  height:0;
+  clear:both;
+  visibility:hidden;
+}
+.cse .gsc-resultsHeader,
+.gsc-resultsHeader {
+  border: block;
+}
+/* Search button */
+.cse input.gsc-search-button,
+input.gsc-search-button {
+  margin-top:0 !important;
+  font-family: inherit;
+  color: #000000;
+  text-shadow: 0 1px 2px #FFFFFF;
+  background-color: #CECECE;
+  border: 1px outset;
+  border-color: #666666;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+/* Inactive tab */
+.cse .gsc-tabHeader.gsc-tabhInactive,
+.gsc-tabHeader.gsc-tabhInactive {
+  border-bottom: none;
+  color: #666666;
+  background-color:none;
+  border: none;
+  /*border-color: #e9e9e9;
+  border-bottom: none;*/
+}
+/* Active tab */
+.cse .gsc-tabHeader.gsc-tabhActive,
+.gsc-tabHeader.gsc-tabhActive {
+  background-color:none;
+  border: none;
+  border-top: none;
+  /*border-color: #e9e9e9;
+  border-top-color: #FF9900;*/
+  border-bottom: none;
+}
+/* This is the tab bar bottom border. */
+.cse .gsc-tabsArea,
+.gsc-tabsArea {
+  margin-top: 1em;
+  border-bottom: 1px solid #e9e9e9;
+}
+/* Inner wrapper for a result */
+.cse .gsc-webResult.gsc-result,
+gsc-webResult .gsc-result {
+  padding: .25em;
+  border:none;
+  border-color:transparent;
+  margin-bottom: 1em;
+}
+.gsc-completion-selected {
+  background: transparent;
+}
+.gsc-completion-container {
+  font-family: Arial, sans-serif;
+  font-size: 1.2em !important;
+  position: absolute;
+  background: white;
+  border: none;
+  margin-left: 0;
+  margin-right: 0;
+  /* The top, left, and width are set in JavaScript. */
+}
+
+/* Full URL */
+div.gs-result.gs-webResult .gs-visibleUrl-short {
+  display: none;
+}
+div.gs-result.gs-webResult .gs-visibleUrl-long {
+  display: block;
+}
+
+#content #left table.gsc-search-box,
+#content #left table.gsc-search-box tr,
+#content #left table.gsc-search-box tr th,
+#content #left table.gsc-search-box tr:first-child th,
+#content #left table.gsc-search-box tr td,
+#content #left table.gsc-search-box tr:nth-child(even) td,
+#content #left table.gsc-search-box tr:nth-child(odd) td,
+#content #left table.gsc-resultsHeader,
+#content #left table.gsc-resultsHeader tr,
+#content #left table.gsc-resultsHeader tr th,
+#content #left table.gsc-resultsHeader tr:first-child th,
+#content #left table.gsc-resultsHeader tr td,
+#content #left table.gsc-resultsHeader tr:nth-child(even) td,
+#content #left table.gsc-resultsHeader tr:nth-child(odd) td {
+  border:none !important;
+  border-collapse:inherit;
+  background:none !important;
+  margin:0 !important;
+}
+
+/* setting styles from secondary.css */
+a[target$="_blank"] {
+	padding-right: 0;
+	background:none;
+}
+
+/* promoted links */
+.gs-promotion a.gs-title:link, 
+.gs-promotion a.gs-title:link *, 
+.gs-promotion a.gs-title:visited,
+.gs-promotion a.gs-title:visited *,
+.gs-promotion .gs-snippet a:link,
+.gs-promotion .gs-snippet a:visited {
+	color:#b10202 !important;
+}
+
+
+#content #left table {
+	margin:0 !important;
+	background-color:transparent !important;
+}
+
+#content #left table tr:nth-child(2n+1) {
+	background-color:transparent !important;
+}
+
+
+
+#content #left table tr td {
+	border:none !important;
+}
+	#content #left table tr:hover {
+		background:none;
+	}
+	#content #left table tr:nth-child(even) td,
+	#content #left table tr:nth-child(odd) td,
+	#content #left table tr:nth-child(even):hover td,
+	#content #left table tr:nth-child(odd):hover td {
+		background-color:transparent !important;
+		padding-bottom:10px !important;
+	}
+
+.#content #left table.gsc-above-wrapper-area-container tr td {
+		border-bottom:none !important;
+}
+
+.gs-webResult.gs-result a.gs-title:visited, .gs-webResult.gs-result a.gs-title:visited b, .gs-imageResult a.gs-title:visited, .gs-imageResult a.gs-title:visited b,
+.gs-webResult.gs-result a.gs-title:link, .gs-webResult.gs-result a.gs-title:link b, .gs-imageResult a.gs-title:link, .gs-imageResult a.gs-title:link b,
+.gsc-results .gsc-cursor-box .gsc-cursor-page {
+	color:#b10202 !important;
+	text-decoration:underline !important;
+}
+	.gs-webResult.gs-result a.gs-title:hover,
+	.gs-webResult.gs-result a.gs-title:active,
+	.gs-webResult.gs-result a.gs-title:hover b,
+	.gs-webResult.gs-result a.gs-title:active b {
+		color:#666 !important;
+	}
+
+.gsc-webResult.gsc-result, .gsc-results .gsc-imageResult,
+#content #left table tr:nth-child(odd) td, .views-table tr:nth-child(odd) td {
+	border-color: none !important;
+	background-color: none !important;
+}
+
+.cse .gsc-webResult.gsc-result, .gsc-webResult.gsc-result, .gsc-imageResult-column, .gsc-imageResult-classic {
+	border:none !important;
+}
+
+.cse .gsc-control-cse div, 
+.gsc-control-cse div {
+	border-bottom:none !important;
+	background-color:transparent !important;
+}
+
+.gsc-control-cse .gs-spelling, .gsc-control-cse .gs-result .gs-title, .gsc-control-cse .gs-result .gs-title *,
+.gsc-control-cse, .gsc-control-cse .gsc-table-result {
+	font-size:1.028em !important;
+	text-decoration:none !important;
+}
+
+table.gsc-resultsHeader {
+	display:none;
+}
+
+table.gsc-search-box:hover tr td {
+	border-bottom:none !important;
+}
+
+.gsc-webResult.gsc-result, .gsc-results .gsc-imageResult {
+	border-bottom:dotted 1px #ccc !important;
+}
+
+.gsc-webResult.gsc-result:first-child, .gsc-results .gsc-imageResult:first-child {
+	border-top:dotted 1px #ccc !important;
+}
+.gsc-expansionArea .gsc-webResult.gsc-result:first-child,
+.gsc-expansionArea .gsc-results .gsc-imageResult:first-child {
+	border-top:none !important;
+}
+
+.cse .gsc-webResult.gsc-result, .gsc-webResult.gsc-result, .gsc-imageResult-column, .gsc-imageResult-classic {
+	margin-bottom:0 !important;
+}
+
+.gsc-option-menu-container div {
+	background-color:#fff !important;
+}
+
+.gsc-results .gsc-cursor-box {
+	margin:10px 0 !important;
+}
+
+.gsc-cursor {
+	display:block !important;
+	margin:0 auto !important;
+}
+
+.gsc-cursor-page {
+	font-size:15px;
+}
+
+#content form.gsc-search-box {
+	width:100% !important;
+	margin:20px auto !important;
+	display:inline-block !important;
+  position:relative !important;
+	height:60px !important;
+	overflow:hidden !important;
+	border:solid 2px #b10202 !important;
+	background:none !important;
+	font-size:28px !important;
+}
+	#content form.gsc-search-box input#gsc-i-id2 {
+		margin-right:10px;
+		padding:6px 8px !important;
+		background-position:5px center !important;
+	}
+  #search td.gsc-input {
+    position:relative;
+  }
+	input.gsc-input {
+    position:absolute !important;
+    top:0 !important;
+    left:0 !important;
+		width:calc(100% - 60px) !important;
+		height:60px !important;
+		border:none !important;
+		margin:0 !important;
+		padding:15px 15px 15px 15px !important;
+		background-color:rgba(255,255,255,.85) !important;
+	}
+	#content form.gsc-search-box input.gsc-search-button {
+		-webkit-appearance: none !Important;
+		-webkit-border-radius:2px !important;
+    border-radius:0 !important;
+		font-size: 1.25em !important;
+		margin-bottom: 0px !important;
+    position:absolute !Important;
+    top:0 !Important;
+    right:0 !Important;
+		width:60px !Important;
+		height:60px !Important;
+		margin:0 !Important;
+		padding:0 !Important;
+		color:#fff !Important;
+		text-align:center !Important;
+		background: rgba(177,2,2,.7) url(/sites/all/themes/unlv_internal_2015/css/images/search.svg) no-repeat center !important;
+    background-size: 28px !important;
+		border:none !Important;
+		border-left:solid 2px #b10202 !Important;
+    text-indent:200% !Important;
+    overflow:hidden !Important;
+	}
+		#content form.gsc-search-box input.gsc-search-button:hover {
+			text-shadow:none !important;
+		}
+		
+.gs-spelling a {
+	color:#b10202 !important;
+}
+
+
+/************************************** MEDIA QUERIES **************************************/
+
+@media only screen 
+and (max-width : 768px) {
+	
+.cse .gsc-control-cse, 
+.gsc-control-cse {
+	padding:0 !important;
+}
+table.gsc-branding, 
+table.gcsc-branding,
+.gsc-above-wrapper-area-container {
+	display:none !important;
+}
+#content form.gsc-search-box {
+	width: 96% !important;
+	margin:0 2% !important;
+	padding:0;
+	font-size:1em !Important;
+}
+table.gsc-search-box tr td {
+	padding:0 !important;
+}
+input.gsc-input {
+	padding:.4em !important;
+	font-size: 1.25em !important;
+	padding: .25em .5em !important;
+}
+td.gsc-table-cell-thumbnail {
+	display:none !important;
+}
+.gsc-cursor-page {
+	font-size:1.5em !important;
+	padding:1em .25em !important;
+}
+.gsc-control-cse .gs-spelling, 
+.gsc-control-cse .gs-result .gs-title, 
+.gsc-control-cse .gs-result .gs-title * {
+	height:auto !important;
+	color:#b10202 !important;
+}
+
+}

@@ -1,0 +1,125 @@
+/**
+ * Styles for the unlv_internal_2015 theme.
+ */
+
+
+/* Content top region for unit homepages */
+/**************************************************************************************/
+
+div.region-content-top section {
+	padding:0;	
+}
+
+div.region-content-bottom section {
+	padding:30px 0;	
+}
+
+
+.flex-caption {
+	margin: 30px 0 0 5px;
+	height: 280px;
+	width: 325px;	
+}
+
+.flex-caption h3 {
+	font-family:sans-serif;
+	color:#607d8b;
+}
+
+/* Left Navigation Container and Link Styles */
+/**************************************************************************************/
+
+section.navbar-legacy-container {
+	padding:0;	
+}
+
+nav.navbar-legacy {
+	list-style-type:none;
+	background:none;
+	border:solid 1px #D5D5D5;
+	margin-top:25px;	
+}
+
+ul.menu-legacy li a {
+	text-decoration:none;	
+}
+
+/* First Menu Item */
+/**************************************************************************************/
+
+ul.menu-legacy li.first a,
+ul.menu-legacy li.first a:link,
+ul.menu-legacy li.first a:visited {
+	padding:.4em;
+	display:block;
+	background-color:#e7e7e7;	
+	border-bottom:solid 1px #D5D5D5;
+	text-decoration:none;
+	color:#8d0101;
+}
+
+
+ul.menu-legacy li.first a:active {
+	text-decoration:none;
+}
+
+
+/* Second Level Menu */
+/**************************************************************************************/
+
+ul.menu-legacy li.first .menu-legacy {
+	margin:0;
+	padding:0;
+	list-style-type:none;
+}
+
+
+ul.menu-legacy li.first .menu-legacy li {
+	list-style-type:none;	
+	list-style-image:none;
+	margin: 0;
+	padding:0;
+}
+
+/*show arrows regardless of state */
+ul.menu-legacy li.first .menu-legacy li.expanded,
+ul.menu-legacy li.first .menu-legacy li.collapsed {
+	background: #f6f6f6 url(/global/css/images/arrow-down.png) no-repeat 3px 9px;					
+}
+	
+
+/* second level, top link styling */
+ul.menu-legacy li.first .menu-legacy li a {
+	background-color:transparent;
+	text-transform:none;
+	border:none;
+	font: normal 0.95em Arial, Helvetica, sans-serif;
+	padding-left:1.1em; /* this will pad over all the links in the menu, consider moving to a parent level */	
+}
+
+ul.menu-legacy li.first .menu-legacy li a.active {
+	text-decoration:underline; /* will apply to 3rd level links as well */		
+}
+
+/* Third Level Menu (when expanded) */
+/**************************************************************************************/
+ul.menu-legacy li.first .menu-legacy li .menu-legacy {
+	padding-bottom: .5em;
+	background-color: #fff;
+	border-top: solid 1px #D5D5D5;
+	border-bottom: solid 1px #D5D5D5;
+	opacity: 1.0;			
+}
+		
+ul.menu-legacy li.first .menu-legacy li.last .menu-legacy {
+	border-bottom:none;	
+}
+	
+ul.menu-legacy li.first .menu-legacy li .menu-legacy li {
+	font-size:0.89em;	
+	background-image: url(/global/css/images/arrow.gif);
+	background-repeat: no-repeat;
+	background-position: 11px 11px;
+	padding-left:1.1em;	
+	color: #333;	
+}		

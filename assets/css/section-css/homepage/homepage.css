@@ -1,0 +1,318 @@
+@charset "UTF-8";
+
+
+#quote-1 {
+    background-color: #444!important;
+}
+
+#quote-2 {
+    border-bottom: solid 1px #ddd;
+}
+
+.image-background {
+    position: relative;
+    overflow: hidden;
+    padding: 120px 0;
+    background-color: #263238;
+}
+  .image-background .image-background-image img {
+      position: absolute;
+      left: -100%;
+      right: -100%;
+      height: auto;
+      width: auto;
+  }
+    .image-background .image-background-image img.blur {
+        -webkit-filter: blur(4px);
+        filter: blur(4px);
+    }
+  .image-background .image-background-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  }
+    .image-background .image-background-overlay.overlay-light {
+        background-color: rgba(255, 255, 255, .8);
+    }
+    .image-background .image-background-overlay.overlay-dark {
+        background-color: rgba(0, 0, 0, .4);
+    }
+  .image-background .image-background-content {
+      position: relative;
+      /* text-shadow: 1px 1px 2px black; */
+  }
+    .image-background .image-background-content h2 {
+        padding-top: 0;
+    }
+    .image-background .image-background-content.text-light {
+        color: #fff;
+    }
+      .image-background .image-background-content.text-light h2, 
+      .image-background .image-background-content.text-light h3.label {
+          color: #fff!important;
+      }
+      .image-background .image-background-content.text-light a.btn.btn-link {
+          color: rgba(255, 255, 255, .9);
+      }
+      .image-background .image-background-content.text-light a.btn.btn-link:active, 
+      .image-background .image-background-content.text-light a.btn.btn-link:hover, 
+      .image-background .image-background-content.text-light a.btn.btn-link:focus {
+          background-color: rgba(0, 0, 0, .2);
+      }
+
+@media (min-width: 480px)  {
+}
+@media (min-width: 600px)  {
+}
+@media (min-width: 768px)  {
+  .image-background .image-background-image img {
+    position: absolute;
+    margin: auto;
+    min-height: 100%;
+    min-width: 100%;
+    max-width: none;
+    height: auto;
+    width: auto;
+  }
+}
+@media (min-width: 960px)  {
+}
+
+
+/* Be Dynamic */
+#dynamic .image-background-image img {
+    bottom: -180px;
+    left: auto;
+    right: -300px;
+}
+.degree-search {
+    margin-bottom: 20px;
+}
+
+@media (min-width: 768px)  {
+  #dynamic .image-background-image img {
+    right: -100px;
+    bottom: -200px;
+  }
+}
+@media (min-width: 1200px)  {
+  #dynamic .image-background-image img {
+    left: -120%;
+    right: -100%;
+  }
+}
+@media (min-width: 1600px)  {
+  #dynamic .image-background-image img {
+    left: -100%;
+    right: -100%;
+  }
+}
+
+
+/* Be Secure */
+#secure .image-background-image img {
+    height: 100%;
+    width: auto;
+    bottom: 0;
+    left: -40%;
+    -webkit-filter: blur(3px);
+    filter: blur(3px);
+}
+#secure .image-background-overlay.overlay-dark {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+@media (min-width: 480px)  {
+  #secure .image-background-image img {
+    left: -25%;
+  }
+}
+@media (min-width: 600px)  {
+  #secure .image-background-image img {
+    left: -10%;
+  }
+}
+@media (min-width: 768px)  {
+  #secure .image-background-image img {
+    height: 100%;
+    width: auto;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    -webkit-filter: none;
+    filter: none;
+  }
+}
+@media (min-width: 1200px)  {
+  #secure .image-background-image img {
+    width: 100%;
+    height: auto;
+    top: -200px;
+    bottom: -50px;
+  }
+}
+@media (min-width: 2000px)  {
+  #secure .image-background-image img {
+    top: -80px;
+  }
+}
+
+
+/* Be Amazed */
+#amazed .image-background-image img {
+    bottom: -50px;
+    left: auto;
+    right: -80%;
+}
+#amazed .image-background-overlay {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+@media (min-width: 480px)  {
+  #amazed .image-background-image img {
+    right: -60%;
+  }
+}
+@media (min-width: 768px)  {
+  #amazed .image-background-image img {
+    bottom: -100px;
+    right: -20%;
+  }
+}
+@media (min-width: 992px)  {
+  #amazed .image-background-image img {
+    right: -20%;
+  }
+}
+@media (min-width: 1200px)  {
+  #amazed .image-background-image img {
+    right: -18%;
+  }
+}
+@media (min-width: 1400px)  {
+  #amazed .image-background-image img {
+    right: -12%;
+  }
+}
+@media (min-width: 1600px)  {
+  #amazed .image-background-image img {
+    right: 0;
+  }
+}
+
+
+/* Be a Rebel */
+#rebel {
+    padding: 240px 0;
+}
+  #rebel .image-background-image img {
+      bottom: 0;
+  }
+  #rebel a.btn.btn-link:active, 
+  #rebel a.btn.btn-link:hover, 
+  #rebel a.btn.btn-link:focus {
+      background-color: rgba(255, 255, 255, .2);
+  }
+section.bg-blue {
+    background-color: #37474f!important;
+}
+  section.bg-blue .tile .tile-overlay[class*="bg-"] {
+      opacity: .4;
+  }
+  section.bg-blue .h2 {
+      color: rgba(255, 255, 255, .8);
+  }
+  section.bg-blue a.btn.btn-link {
+      color: rgba(255, 255, 255, .8);
+  }
+    section.bg-blue a.btn.btn-link:active, 
+    section.bg-blue a.btn.btn-link:hover, 
+    section.bg-blue a.btn.btn-link:focus {
+        background-color: rgba(255, 255, 255, .05);
+    }
+
+@media (min-width: 768px)  {
+  section.bg-blue .h2 {
+    margin-top: 0!important;
+  }
+}
+@media (min-width: 992px)  {
+  section.bg-blue .h2 {
+    margin-top: 0!important;
+    padding: 30px!important;
+  }
+}
+
+
+/* Around Campus - Buttons */
+.btn.bg-orange-dark.text-light {
+  color: #fff !important;
+  text-shadow: 1px 1px 1px #000 !important;
+}
+
+#around-news, #around-events, #around-instagram {
+    background-color: #263238;
+}
+
+/* Around Campus - News */
+#around-news .deck {
+    display: none;
+}
+@media (min-width: 480px)  {
+  #around-news .deck {
+    display: block;
+  }
+}
+
+/* Around Campus - Events/Instagram */
+#around-events.col-xs-6, 
+#around-instagram.col-xs-6 {
+    width: 100%;
+}
+#around-events .tile .tile-overlay-text-bottom .tile-text-inner, 
+#around-instagram .tile .tile-overlay-text-bottom .tile-text-inner {
+    vertical-align: middle;
+}
+
+@media (min-width: 768px)  {
+  #around-events .tile .tile-overlay-text-bottom .tile-text-inner, 
+  #around-instagram .tile .tile-overlay-text-bottom .tile-text-inner {
+    vertical-align: bottom;
+  }
+}
+@media (min-width: 480px)  {
+  #around-events.col-xs-6, #around-instagram.col-xs-6 {
+    width: 50%;
+  }
+}
+@media (min-width: 768px)  {
+  #around-events.col-xs-6, #around-instagram.col-xs-6 {
+    width: 33.33333333%;
+  }
+}
+
+/* Around Campus - Twitter */
+#around-twitter:hover .bg-blue-gray-700 {
+    background-color: #263238!important;
+}
+#around-twitter .tile.ar-1-1 {
+    height: auto;
+    padding-bottom: 0;
+}
+#around-twitter .tile.ar-1-1 .tile-text {
+    position: relative;
+    padding: 28px 14px;
+}
+
+@media (min-width: 768px)  {
+  #around-twitter .tile.ar-1-1 {
+    height: 0;
+    padding-bottom: 100%;
+  }
+  #around-twitter .tile.ar-1-1 .tile-text {
+    position: absolute;
+    padding: 14px;
+  }
+}
