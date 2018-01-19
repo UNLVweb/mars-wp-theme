@@ -43,7 +43,7 @@ get_header(); ?>
                 <div class="row">
 
                   <div class="col-sm-8">
-                    Changed page title again.
+                    Changed page title on new branch.
                     <?php if ( have_posts() ) : ?>
                       <?php
                       // Start the loop.
