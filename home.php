@@ -43,7 +43,7 @@ get_header(); ?>
                 <div class="row">
 
                   <div class="col-sm-8">
-                    Home
+                    Changed page title.
                     <?php if ( have_posts() ) : ?>     
                       <?php
                       // Start the loop.
