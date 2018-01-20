@@ -19,7 +19,7 @@ function mars_register_menus() {
       'header-menu' => __( 'Header Menu' ),
       'footer-menu' => __( 'Footer Menu' ),
       'topic-menu' => __( 'Topics Menu (Advanced Users)' ),
-      'audience-menu' => __( 'Audiences Menu (Advanced Users)' ),      
+      'audience-menu' => __( 'Audiences Menu (Advanced Users)' ),
     )
   );
 }
@@ -85,7 +85,7 @@ function mars_default_menu() {
         $html .= '<a href="' . esc_url( $post_url ) . '" title="' . __( $post_title, 'mars' ) . '">';
           $html .= __( $post_title, 'mars' );
         $html .= '</a>';
-        $html .= '</li>';      
+        $html .= '</li>';
       }
     }
 
@@ -163,7 +163,7 @@ function mars_widgets_init() {
         'before_title'  => '<h4 class="card-title">',
         'after_title'   => '</h4>',
     ) );
- 
+
     register_sidebar( array(
         'name'          => __( 'Find', 'mars' ),
         'id'            => 'find',
@@ -179,7 +179,7 @@ function mars_scripts() {
   wp_enqueue_style( 'mars-bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' );
   wp_enqueue_style( 'mars-google-font-roboto', 'https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700|Roboto+Condensed:400,100,300,700|Roboto+Mono|Roboto+Slab:400,100,300,400,700' );
   wp_enqueue_style( 'mars-font-awesome-4', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css' );
-  wp_enqueue_style( 'mars-style', get_stylesheet_uri() );  
+  wp_enqueue_style( 'mars-style', get_stylesheet_uri() );
   wp_enqueue_style( 'mars-bootstrap-4-alpha', get_template_directory_uri() . '/assets/css/bootstrap-4-alpha.css' );
   wp_enqueue_style( 'mars-base', get_template_directory_uri() . '/assets/css/base.css' );
   wp_enqueue_style( 'mars-layout', get_template_directory_uri() . '/assets/css/layout.css' );
@@ -204,3 +204,8 @@ function mars_footer_script() {
 
 }
 add_action( 'wp_footer', 'mars_footer_script' );
+
+// Set image path
+if( !defined(THEME_IMG_PATH) ) {
+  define( 'THEME_IMG_PATH', get_stylesheet_directory_uri() . '/assets/css/images' );
+}
