@@ -18,7 +18,7 @@ get_header(); ?>
         <div class="col-sm-12">
           <ol class="breadcrumb">
             <li><a href="/"><?php echo get_bloginfo( 'name' ); ?></a></li>
-            <li>Page Title</li>
+            <li>Home</li>
           </ol>
         </div>
       </div>
@@ -38,48 +38,31 @@ get_header(); ?>
               </section>
             <?php endif; ?>
 
-            <section class="bg-gray">
+            <section class="marquee" style="background-image:url('<?php echo THEME_IMG_PATH; ?>/hero-placeholder.JPG')" /> <!-- dynamic image pull -->
+              <div class="overlay"></div>
+              <div class="marquee-text">
+                <h2>[dynamic hero title]</h2>
+                <p>[dynamic hero caption]</p>
+              </div>
+            </section>
+            <section class="bg-white">
               <div class="container">
                 <div class="row">
-
-                  <div class="col-sm-8">
-                    Changed page title on new branch.
-                    <?php if ( have_posts() ) : ?>
-                      <?php
-                      // Start the loop.
-                      while ( have_posts() ) : the_post();
-
-                        /*
-                         * Include the Post-Format-specific template for the content.
-                         * If you want to override this in a child theme, then include a file
-                         * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                         */
-                        get_template_part( 'template-parts/content', get_post_format() );
-
-                      // End the loop.
-                      endwhile;
-
-                      // Previous/next page navigation.
-                      the_posts_pagination( array(
-                        'prev_text'          => __( 'Previous page', 'twentysixteen' ),
-                        'next_text'          => __( 'Next page', 'twentysixteen' ),
-                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>',
-                      ) );
-
-                      // If no content, include the "No posts found" template.
-                      else :
-                        get_template_part( 'template-parts/content', 'none' );
-
-                    endif;
-                    ?>
-                  </div> <!-- /.col -->
-
-                  <div class="col-sm-4">
-                    <div class="card card-block">
-                    <?php get_sidebar(); ?>
-                    </div>
+                  <div class="col-xs-12">
+                    <h3>[dynamic section title]</h3>
+                    <p>[dynamic section paragraph]</p>
                   </div>
-                </div> <!-- /.row -->
+                </div>
+              </div>
+            </section>
+            <section class="bg-blue">
+              <div class="container">
+                <div class="row">
+                  <div class="col-xs-12">
+                    <h3>[dynamic section title]</h3>
+                    <p>[dynamic section paragraph]</p>
+                  </div>
+                </div>
               </div>
             </section>
 
