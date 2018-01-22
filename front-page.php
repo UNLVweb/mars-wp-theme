@@ -43,7 +43,7 @@ get_header(); ?>
                 <div class="row">
 
                   <div class="col-sm-8">
-                    Front Page
+                    Front Page 1
                     <?php if ( have_posts() ) : ?>     
                       <?php
                       // Start the loop.
