@@ -13,19 +13,19 @@
   <header class="entry-header">
     <?php
     if ( is_singular() ) :
-      the_title( '<h1 class="entry-title">', '</h1>' );
+      the_title( '<h3 class="entry-title">', '</h3>' );
     else :
-      the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+      the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
     endif;
     if ( 'post' === get_post_type() ) : ?>
     <div class="entry-meta">
-      <?php get_the_date(); ?>
+      <?php echo get_the_date(); ?>
     </div><!-- .entry-meta -->
     <?php
     endif; ?>
   </header><!-- .entry-header -->
 
-  <?php the_post_thumbnail(); ?>
+  <?php echo the_post_thumbnail(); ?>
 
   <div class="entry-content">
     <?php

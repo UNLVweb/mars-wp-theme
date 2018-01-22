@@ -18,7 +18,7 @@ get_header(); ?>
         <div class="col-sm-12">
           <ol class="breadcrumb">
             <li><a href="/"><?php echo get_bloginfo( 'name' ); ?></a></li>
-            <li>Page Title</li>
+            <li><?php the_title(); ?></li>
           </ol>
         </div>
       </div>
