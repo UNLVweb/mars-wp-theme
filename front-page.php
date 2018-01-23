@@ -12,6 +12,10 @@
  * @package mars
  */
 
+// Custom Fields
+$test_page_title      = get_post_meta( 2, 'test_page_title', true );
+$test_page_paragraph  = get_post_meta( 2, 'test_page_paragraph', true);
+
 get_header(); ?>
 
      <div class="row">
@@ -43,8 +47,9 @@ get_header(); ?>
                 <div class="row">
 
                   <div class="col-sm-8">
-                    Front Page 1
-                    <?php if ( have_posts() ) : ?>     
+                    <h2><?php echo $test_page_title ?></h2>
+                    <p><?php echo $test_page_paragraph ?></p>
+                    <?php if ( have_posts() ) : ?>
                       <?php
                       // Start the loop.
                       while ( have_posts() ) : the_post();
@@ -83,9 +88,9 @@ get_header(); ?>
               </div>
             </section>
 
-          </section>  <!-- /.block-system-main -->   
+          </section>  <!-- /.block-system-main -->
         </div> <!-- /.region-content -->
-      </div> <!-- /#content-main-->     
+      </div> <!-- /#content-main-->
     </div> <!--end #content-->
 
 <?php get_footer(); ?>
