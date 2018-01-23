@@ -14,7 +14,7 @@
           <nav arial-label="footer links and copyright">
             <div class="container">
               <div class="row">
-                <?php 
+                <?php
                 wp_nav_menu(
                   array(
                     'theme_location' => 'footer-menu',
