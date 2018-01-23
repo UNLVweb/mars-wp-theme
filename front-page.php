@@ -44,7 +44,7 @@ get_header(); ?>
 
                   <div class="col-sm-8">
                     Front Page 1
-                    <?php if ( have_posts() ) : ?>     
+                    <?php if ( have_posts() ) : ?>
                       <?php
                       // Start the loop.
                       while ( have_posts() ) : the_post();
@@ -83,9 +83,9 @@ get_header(); ?>
               </div>
             </section>
 
-          </section>  <!-- /.block-system-main -->   
+          </section>  <!-- /.block-system-main -->
         </div> <!-- /.region-content -->
-      </div> <!-- /#content-main-->     
+      </div> <!-- /#content-main-->
     </div> <!--end #content-->
 
 <?php get_footer(); ?>
