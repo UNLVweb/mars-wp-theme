@@ -43,53 +43,38 @@ get_header(); ?>
                 </div>
               </section>
             <?php endif; ?>
-
+            <section class="bg-white">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="card card-block bg-gray offset-top">
+                    <div class="card-title"><h3 class="clear-margin-top">Lorem Ipsum Dolor Sit Amet</h3></div>
+                      <div class="card-text">
+                    <p>Praesent porttitor velit id venenatis sollicitudin. Nullam id mollis elit, at mollis eros. Sed non interdum quam, non sollicitudin justo. Maecenas porta arcu nec elit malesuada ullamcorper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+                    <p>Vestibulum accumsan tortor et imperdiet dictum. Proin lacus libero, varius eget gravida eget, dapibus eu nunc.</p>
+                      <p class="clear-margin-bottom"><a class="btn btn-primary" role="button" href="#">Button</a></p></div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <p>Nunc tortor ante, volutpat ut eros non, porta porttitor orci. Pellentesque lectus turpis, auctor at faucibus gravida, semper ac arcu.</p>
+                  <ul>
+                    <li>Nullam bibendum nunc lobortis ante gravida euismod.</li>
+                    <li>Nullam condimentum mi sit amet pellentesque molestie.</li>
+                    <li>Fusce pellentesque nunc eget scelerisque bibendum.</li>
+                    <li>Fusce accumsan ipsum vel erat commodo feugiat.</li>
+                    <li>Cras nec nunc in est finibus pulvinar.</li>
+                  </ul>
+                 </div>
+              </div>
+            </div>
+            </section>
             <section class="bg-gray">
               <div class="container">
                 <div class="row">
 
-                  <div class="col-sm-8">
-                    <h2><?php echo $test_page_title ?></h2>
-                    <p><?php echo $test_page_paragraph ?></p>
-                    <div class="card card-block">
-                    <div class="card-title"><h3><?php echo $test_card_title; ?></h3></div>
-                      <p><?php echo $test_card_paragraph; ?></p>
-                    </div>
-                    <?php if ( have_posts() ) : ?>
-                      <?php
-                      // Start the loop.
-                      while ( have_posts() ) : the_post();
-
-                        /*
-                         * Include the Post-Format-specific template for the content.
-                         * If you want to override this in a child theme, then include a file
-                         * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                         */
-                        get_template_part( 'template-parts/content', get_post_format() );
-
-                      // End the loop.
-                      endwhile;
-
-                      // Previous/next page navigation.
-                      the_posts_pagination( array(
-                        'prev_text'          => __( 'Previous page', 'twentysixteen' ),
-                        'next_text'          => __( 'Next page', 'twentysixteen' ),
-                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>',
-                      ) );
-
-                      // If no content, include the "No posts found" template.
-                      else :
-                        get_template_part( 'template-parts/content', 'none' );
-
-                    endif;
-                    ?>
+                  <div class="col-sm-12">
+                
                   </div> <!-- /.col -->
-
-                  <div class="col-sm-4">
-                    <div class="card card-block">
-                    <?php get_sidebar(); ?>
-                    </div>
-                  </div>
                 </div> <!-- /.row -->
               </div>
             </section>
