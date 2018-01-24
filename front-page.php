@@ -15,6 +15,8 @@
 // Custom Fields
 $test_page_title      = get_post_meta( 2, 'test_page_title', true );
 $test_page_paragraph  = get_post_meta( 2, 'test_page_paragraph', true);
+$test_card_title      = get_post_meta( 2, 'test_card_title', true);
+$test_card_paragraph  = get_post_meta( 2, 'test_card_paragraph', true);
 
 get_header(); ?>
 
@@ -49,6 +51,10 @@ get_header(); ?>
                   <div class="col-sm-8">
                     <h2><?php echo $test_page_title ?></h2>
                     <p><?php echo $test_page_paragraph ?></p>
+                    <div class="card card-block">
+                    <div class="card-title"><h3><?php echo $test_card_title; ?></h3></div>
+                      <p><?php echo $test_card_paragraph; ?></p>
+                    </div>
                     <?php if ( have_posts() ) : ?>
                       <?php
                       // Start the loop.
