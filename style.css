@@ -7,3 +7,10 @@ Description: A port from the most recent Drupal theme.
 Version: 1.0
 Tags: one-column
 */
+
+
+/* Secondary Widget Styling */
+
+#secondary > aside {
+  margin-bottom: 15px;
+}

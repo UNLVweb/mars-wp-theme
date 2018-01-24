@@ -77,7 +77,7 @@
      
               <div class="website-title">
                 <h1>
-                  <a href="/" tabindex="3">
+                  <a href="<?php echo esc_url( home_url() ); ?>" tabindex="3">
                     <span class="short-title"><?php echo get_bloginfo( 'name' ); ?></span>
                     <span class="full-title"><?php echo get_bloginfo( 'name' ); ?></span>
                   </a>
@@ -116,8 +116,14 @@
       <div class="scroller" id="search-scroller" tabindex="-1">
         <div class="nav-close"><a href="#" id="search-close">close find region</a></div>
         <h2>Find</h2>
-
-        <?php echo get_search_form(); ?>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 padding-top-sm">
+              <p>Search within this site.</p>
+              <?php echo get_search_form(); ?>
+            </div>
+          </div>
+        </div>        
       </div><!--end .scroller-->  
     </div><!--end #search-->
 

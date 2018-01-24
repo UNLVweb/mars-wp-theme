@@ -17,8 +17,10 @@ get_header(); ?>
      <div class="row">
         <div class="col-sm-12">
           <ol class="breadcrumb">
-            <li><a href="/"><?php echo get_bloginfo( 'name' ); ?></a></li>
-            <li><?php wp_title(''); ?></li>
+            <li><a href="<?php echo esc_url( home_url() ); ?>"><?php echo get_bloginfo( 'name' ); ?></a></li>
+            <?php if ( ! is_home() && ! is_front_page() ) : ?>
+              <li><?php wp_title(''); ?></li>
+            <?php endif; ?>            
           </ol>
         </div>
       </div>
