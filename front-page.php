@@ -78,12 +78,17 @@ get_header(); ?>
               </div>
             </div>
             </section>
-            <section class="bg-gray">
+            <section class="bg-tan">
               <div class="container">
                 <div class="row">
-
-                  <div class="col-sm-12">
-                
+                  <div class="col-sm-5">
+                  <figure><img src="http://www.unlv.edu/sites/default/files/styles/610_width/public/default_images/D67387_23-1.jpg?itok=FrlIx6Yd&timestamp=1438270618%201x" class="img-responsive" alt="...">
+                    <figcaption>This is a caption for the image above</figcaption>
+                  </figure>
+                  </div>
+                  <div class="col-sm-7">
+                    <h3 class="clear-margin-top">Header Title</h3>
+                    <p>Praesent porttitor velit id venenatis sollicitudin. Nullam id mollis elit, at mollis eros. Sed non interdum quam, non sollicitudin justo. Maecenas porta arcu nec elit malesuada ullamcorper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
                   </div> <!-- /.col -->
                 </div> <!-- /.row -->
               </div>
