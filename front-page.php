@@ -43,6 +43,16 @@ get_header(); ?>
                 </div>
               </section>
             <?php endif; ?>
+            <section class="hero">
+              <img src="…" alt="">
+              <div class="overlay"></div>
+                <div class="hero-text">
+                  <div class="hero-text-inner">
+                    <h2>Life at UNLV: Something for Everyone</h2>
+                      <p>We don't separate life and education. At UNLV living is learning. <a href="#">Read More</a></p>
+                  </div>
+                </div>
+            </section>
             <section class="bg-white">
             <div class="container">
               <div class="row">
