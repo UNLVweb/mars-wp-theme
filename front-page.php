@@ -57,7 +57,7 @@ get_header(); ?>
             <div class="container">
               <div class="row">
                 <div class="col-sm-6">
-                  <div class="card card-block bg-gray">
+                  <div class="offset-top card card-block bg-gray">
                     <div class="card-title"><h3 class="clear-margin-top">Lorem Ipsum Dolor Sit Amet</h3></div>
                       <div class="card-text">
                     <p>Praesent porttitor velit id venenatis sollicitudin. Nullam id mollis elit, at mollis eros. Sed non interdum quam, non sollicitudin justo. Maecenas porta arcu nec elit malesuada ullamcorper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
