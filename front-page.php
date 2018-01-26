@@ -44,7 +44,7 @@ get_header(); ?>
               </section>
             <?php endif; ?>
             <section class="hero">
-              <img src="…" alt="">
+              <img src="http://www.unlv.edu/sites/default/files/assets/style-guide/images/marquees/D65847_18.jpg" alt="">
               <div class="overlay"></div>
                 <div class="hero-text">
                   <div class="hero-text-inner">
