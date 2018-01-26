@@ -78,7 +78,7 @@
               <div class="website-title">
                 <h1>
                   <a href="<?php echo esc_url( home_url() ); ?>" tabindex="3">
-                    <span class="short-title"><?php echo get_bloginfo( 'name' ); ?></span>
+                    <span class="short-title"><?php echo get_bloginfo( 'description' ); ?></span>
                     <span class="full-title"><?php echo get_bloginfo( 'name' ); ?></span>
                   </a>
                 </h1>

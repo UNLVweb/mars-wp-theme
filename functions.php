@@ -7,6 +7,9 @@
  * @package mars
  */
 
+include('inc/customizer.php');
+
+
 /**
  * Registers menus
  *
