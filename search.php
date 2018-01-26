@@ -18,9 +18,7 @@ get_header(); ?>
         <div class="col-sm-12">
           <ol class="breadcrumb">
             <li><a href="<?php echo esc_url( home_url() ); ?>"><?php echo get_bloginfo( 'name' ); ?></a></li>
-            <?php if ( ! is_home() && ! is_front_page() ) : ?>
-              <li><?php wp_title(''); ?></li>
-            <?php endif; ?>
+            <li>Search</li>
           </ol>
         </div>
       </div>
@@ -32,21 +30,22 @@ get_header(); ?>
           <section id="block-system-main" class="block block-system clearfix clear-padding">
             <div class="content-area-start"></div>
 
-            <?php if ( is_home() && ! is_front_page() ) : ?>
               <section>
                 <div class="container">
-                  <h2 class="clear-margin-bottom"><?php single_post_title(); ?></h2>
+                  <h2 class="clear-margin-bottom">Search</h2>
+                  <?php echo get_search_form(); ?>
+
                 </div>
               </section>
-            <?php endif; ?>
 
-            <section class="bg-gray">
+            <section class="bg-gray padding-top-md">
               <div class="container">
                 <div class="row">
 
-                  <div class="col-sm-8">
-                    Changed page title again.
-                    <?php if ( have_posts() ) : ?>
+                  <div class="col-sm-12">
+                    <h3 class="">Results for "<?php echo get_search_query(); ?>"</h3>
+
+                    <?php if ( have_posts() ) : ?>     
                       <?php
                       // Start the loop.
                       while ( have_posts() ) : the_post();
@@ -63,9 +62,9 @@ get_header(); ?>
 
                       // Previous/next page navigation.
                       the_posts_pagination( array(
-                        'prev_text'          => __( 'Previous page', 'mars' ),
-                        'next_text'          => __( 'Next page', 'mars' ),
-                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'mars' ) . ' </span>',
+                        'prev_text'          => __( 'Previous page', 'twentysixteen' ),
+                        'next_text'          => __( 'Next page', 'twentysixteen' ),
+                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>',
                       ) );
 
                       // If no content, include the "No posts found" template.
@@ -74,20 +73,14 @@ get_header(); ?>
 
                     endif;
                     ?>
-                  </div> <!-- /.col -->
-
-                  <div class="col-sm-4">
-                    <div class="card card-block">
-                    <?php get_sidebar(); ?>
-                    </div>
-                  </div>
+                  </div> <!-- /.col -->                  
                 </div> <!-- /.row -->
               </div>
             </section>
 
-          </section>  <!-- /.block-system-main -->
+          </section>  <!-- /.block-system-main -->   
         </div> <!-- /.region-content -->
-      </div> <!-- /#content-main-->
+      </div> <!-- /#content-main-->     
     </div> <!--end #content-->
 
 <?php get_footer(); ?>

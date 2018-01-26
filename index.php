@@ -17,8 +17,10 @@ get_header(); ?>
      <div class="row">
         <div class="col-sm-12">
           <ol class="breadcrumb">
-            <li><a href="/"><?php echo get_bloginfo( 'name' ); ?></a></li>
-            <li>Page Title</li>
+            <li><a href="<?php echo esc_url( home_url() ); ?>"><?php echo get_bloginfo( 'name' ); ?></a></li>
+            <?php if ( ! is_home() && ! is_front_page() ) : ?>
+              <li><?php wp_title(''); ?></li>
+            <?php endif; ?>            
           </ol>
         </div>
       </div>
@@ -30,13 +32,11 @@ get_header(); ?>
           <section id="block-system-main" class="block block-system clearfix clear-padding">
             <div class="content-area-start"></div>
 
-            <?php if ( is_home() && ! is_front_page() ) : ?>
               <section>
                 <div class="container">
-                  <h2 class="clear-margin-bottom"><?php single_post_title(); ?></h2>
+                  <h2 class="clear-margin-bottom"><?php wp_title(''); ?></h2>
                 </div>
               </section>
-            <?php endif; ?>
 
             <section class="bg-gray">
               <div class="container">
