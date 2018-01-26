@@ -11,13 +11,6 @@
  *
  * @package mars
  */
-
-// Custom Fields
-$test_page_title      = get_post_meta( 2, 'test_page_title', true );
-$test_page_paragraph  = get_post_meta( 2, 'test_page_paragraph', true);
-$test_card_title      = get_post_meta( 2, 'test_card_title', true);
-$test_card_paragraph  = get_post_meta( 2, 'test_card_paragraph', true);
-
 get_header(); ?>
 
      <div class="row">
