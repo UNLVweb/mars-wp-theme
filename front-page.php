@@ -13,16 +13,6 @@
  */
 get_header(); ?>
 
-     <div class="row">
-        <div class="col-sm-12">
-          <ol class="breadcrumb">
-            <li><a href="<?php echo esc_url( home_url() ); ?>"><?php echo get_bloginfo( 'name' ); ?></a></li>
-            <?php if ( ! is_home() && ! is_front_page() ) : ?>
-              <li><?php wp_title(''); ?></li>
-            <?php endif; ?> 
-          </ol>
-        </div>
-      </div>
     </div> <!-- /.system-container -->
 
     <div id="content" class="unlv-node-published">
@@ -39,7 +29,15 @@ get_header(); ?>
               </section>
             <?php endif; ?>
             <section class="hero">
-              <img src="http://www.unlv.edu/sites/default/files/assets/style-guide/images/marquees/D65847_18.jpg" alt="">
+              <?php
+              if (get_theme_mod( 'hero_image' ))
+                $hero_image_path = get_theme_mod( 'hero_image');
+              else
+                $hero_image_path = get_template_directory_uri() . '/assets/images/D65847_18.jpg';
+
+                echo '<img src="' . $hero_image_path . '" alt=""/>';
+              ?>
+
               <div class="overlay"></div>
                 <div class="hero-text">
                   <div class="hero-text-inner">

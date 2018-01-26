@@ -7,14 +7,15 @@
   } );
   
   wp.customize( 'blogname', function( value ) {
+    console.log(value);
     value.bind( function( newval ) {
-      $( 'div.website-title > a.full-title' ).html( newval );
+      $( '.full-title' ).html( newval );
     } );  
   } );
 
   wp.customize( 'blogdescription', function( value ) {
     value.bind( function( newval ) {
-      $( 'div.website-title > a.short-title' ).html( newval );
+      $( '.short-title' ).html( newval );
     } );
   } );
 
