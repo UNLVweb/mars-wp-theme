@@ -253,6 +253,26 @@ function mars_customizer_settings( $wp_customize ) {
       'type'   => 'textarea',
   ) );
 
+ // Create section for advanced options.
+  $wp_customize->add_section( 'mars_frontpage_advanced' , array(
+    'title'      => 'Advanced Options',
+    'priority'   => 30,
+    'panel'  => 'panel_front_page',
+    'description'    => __('Using HTML, create custom content for your front page. For a completely custom front page, you can hide section one, section two, and the hero image by setting their display option to "Hide".', 'mars'),
+  ) );
+
+    // Create second image caption text field.
+  $wp_customize->add_setting( 'frontpage_advanced_content' , array(
+      'transport'   => 'refresh',
+  ) );
+
+  $wp_customize->add_control( 'frontpage_advanced_content', array(
+      'label' => 'Custom Code',
+      'section' => 'mars_frontpage_advanced',
+      'type'   => 'textarea',
+  ) );
+
+
   // Pass to customizer.js for real-time updates during theme customization.
 
   // Hero image settings.
@@ -270,6 +290,9 @@ function mars_customizer_settings( $wp_customize ) {
   $wp_customize->get_setting( 'section_two_toggle_display' )->transport = 'postMessage';
   $wp_customize->get_setting( 'section_two_right_column_text' )->transport = 'postMessage';
   $wp_customize->get_setting( 'section_two_image_caption' )->transport = 'postMessage';
+
+  // Advanced settings.
+  $wp_customize->get_setting( 'frontpage_advanced_content' )->transport = 'postMessage';
 
   // Header settings.
   $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';

@@ -82,5 +82,11 @@
     } );
   } );
 
+  wp.customize( 'frontpage_advanced_content', function( value ) {
+    value.bind( function( newval ) {
+      $( '#front-page-custom-content' ).html( newval );
+    } );
+  } );
+
 
 } )( jQuery );

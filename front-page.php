@@ -162,6 +162,15 @@ get_header(); ?>
               </section>
               <?php
             }
+
+            // Display custom HTML.
+            if ( get_theme_mod( 'frontpage_advanced_content' ) ) {
+              ?>
+              <div id="front-page-custom-content">
+                <?php echo get_theme_mod( 'frontpage_advanced_content' ); ?>
+              </div>
+              <?php
+            }
             ?>
           </section>  <!-- /.block-system-main -->
         </div> <!-- /.region-content -->
