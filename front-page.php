@@ -41,8 +41,19 @@ get_header(); ?>
               <div class="overlay"></div>
                 <div class="hero-text">
                   <div class="hero-text-inner">
-                    <h2>Life at UNLV: Something for Everyone</h2>
-                      <p>We don't separate life and education. At UNLV living is learning. <a href="#">Read More</a></p>
+                    <?php
+                    if (get_theme_mod( 'hero_image_heading' ))
+                      $hero_image_heading = htmlspecialchars(get_theme_mod( 'hero_image_heading'));
+                    else
+                      $hero_image_heading = 'Life at UNLV: Something for Everyone';
+
+                    if (get_theme_mod( 'hero_image_description' ))
+                      $hero_image_description = get_theme_mod( 'hero_image_description' );
+                      else
+                      $hero_image_description = "We don't separate life and education. At UNLV living is learning.";
+                    ?>
+                      <h2 id="hero-heading"><?php echo $hero_image_heading; ?></h2>
+                      <p id="hero-description"><?php echo $hero_image_description; ?></p>
                   </div>
                 </div>
             </section>

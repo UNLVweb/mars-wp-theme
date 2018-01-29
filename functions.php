@@ -7,6 +7,10 @@
  * @package mars
  */
 
+
+/**
+ * Appearance customizer.
+ */
 include('inc/customizer.php');
 
 

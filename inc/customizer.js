@@ -19,4 +19,15 @@
     } );
   } );
 
+  wp.customize( 'hero_image_heading', function( value ) {
+    value.bind( function( newval ) {
+      $( '#hero-heading' ).html( newval );
+    } );
+  } );
+
+  wp.customize( 'hero_image_description', function( value ) {
+    value.bind( function( newval ) {
+      $( '#hero-description' ).html( newval );
+    } );
+  } );
 } )( jQuery );
