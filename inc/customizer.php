@@ -55,7 +55,7 @@ function mars_customizer_settings( $wp_customize ) {
            $wp_customize,
            'logo',
            array(
-               'label'      => __( 'Please choose a hero image.', 'mars' ),
+               'label'      => __( 'Hero Image', 'mars' ),
                'section'    => 'mars_frontpage',
                'settings'   => 'hero_image',
            )
@@ -73,7 +73,7 @@ function mars_customizer_settings( $wp_customize ) {
       'type'   => 'text',
   ) );
 
-  // Create hero descrption field.
+  // Create hero description field.
   $wp_customize->add_setting( 'hero_image_description' , array(
       'transport'   => 'refresh',
   ) );

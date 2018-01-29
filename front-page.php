@@ -62,14 +62,16 @@ get_header(); ?>
               <div class="row">
                 <div class="col-sm-6">
                   <div class="offset-top card card-block bg-gray">
-                    <div class="card-title"><h3 class="clear-margin-top">Lorem Ipsum Dolor Sit Amet</h3></div>
-                      <div class="card-text">
+                    <div class="card-title">
+                      <h3 class="clear-margin-top" id="card-heading">Lorem Ipsum Dolor Sit Amet</h3>
+                    </div>
+                      <div class="card-text" id="card-description">
                     <p>Praesent porttitor velit id venenatis sollicitudin. Nullam id mollis elit, at mollis eros. Sed non interdum quam, non sollicitudin justo. Maecenas porta arcu nec elit malesuada ullamcorper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
                     <p>Vestibulum accumsan tortor et imperdiet dictum. Proin lacus libero, varius eget gravida eget, dapibus eu nunc.</p>
                       <p class="clear-margin-bottom"><a class="btn btn-primary" role="button" href="#">Button</a></p></div>
                   </div>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-6" id="section-one-content">
                   <p>Nunc tortor ante, volutpat ut eros non, porta porttitor orci. Pellentesque lectus turpis, auctor at faucibus gravida, semper ac arcu.</p>
                   <ul>
                     <li>Nullam bibendum nunc lobortis ante gravida euismod.</li>
