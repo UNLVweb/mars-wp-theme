@@ -38,13 +38,39 @@ add_action( 'customize_register', 'mars_customizer_settings' );
  */
 function mars_customizer_settings( $wp_customize ) {
 
+  // Create homepage panel.
+  $wp_customize->add_panel( 'panel_front_page', array(
+      'priority'       => 10,
+      'capability'     => 'edit_theme_options',
+      'theme_supports' => '',
+      'title'          => __('Theme Front Page Options', 'mars'),
+      'description'    => __('Customize your homepage settings.', 'mars'),
+  ) );
+
   // Create section Front Page options.
-  $wp_customize->add_section( 'mars_frontpage' , array(
-    'title'      => 'Front Page Options',
+  $wp_customize->add_section( 'mars_frontpage_hero_image' , array(
+    'title'      => 'Hero Image Settings',
     'priority'   => 30,
+    'panel'  => 'panel_front_page',
+  ) );
+
+  // Create hero image display toggle.
+  $wp_customize->add_setting( 'hero_toggle_display' , array(
+        'default'     => 'show',
+        'transport'   => 'refresh',
+  ) );
+
+    $wp_customize->add_control( 'hero_toggle_display', array(
+        'label' => 'Toggle Hero Display',
+        'section' => 'mars_frontpage_hero_image',
+        'settings' => 'hero_toggle_display',
+        'type' => 'radio',
+        'choices' => array(
+          'show' => 'Show',
+          'hide' => 'Hide',
+        ),
   ) );
   
-
   // Create hero image upload form control.
   $wp_customize->add_setting( 'hero_image' , array(
       'transport'   => 'refresh',
@@ -56,7 +82,7 @@ function mars_customizer_settings( $wp_customize ) {
            'logo',
            array(
                'label'      => __( 'Hero Image', 'mars' ),
-               'section'    => 'mars_frontpage',
+               'section'    => 'mars_frontpage_hero_image',
                'settings'   => 'hero_image',
            )
        )
@@ -69,7 +95,7 @@ function mars_customizer_settings( $wp_customize ) {
 
   $wp_customize->add_control( 'hero_image_heading', array(
       'label' => 'Hero Image Heading',
-      'section' => 'mars_frontpage',
+      'section' => 'mars_frontpage_hero_image',
       'type'   => 'text',
   ) );
 
@@ -80,13 +106,172 @@ function mars_customizer_settings( $wp_customize ) {
 
   $wp_customize->add_control( 'hero_image_description', array(
       'label' => 'Hero Image Description (HTML allowed)',
-      'section' => 'mars_frontpage',
+      'section' => 'mars_frontpage_hero_image',
+      'type'   => 'textarea',
+  ) );
+
+  // Create hero alt text field.
+  $wp_customize->add_setting( 'hero_image_alt' , array(
+      'transport'   => 'refresh',
+  ) );
+
+  $wp_customize->add_control( 'hero_image_alt', array(
+      'label' => 'Hero Image Alt Text',
+      'section' => 'mars_frontpage_hero_image',
+      'type'   => 'textarea',
+  ) );
+
+  // Create section for first section options.
+  $wp_customize->add_section( 'mars_frontpage_section_one' , array(
+    'title'      => 'Section One Options',
+    'priority'   => 30,
+    'panel'  => 'panel_front_page',
+    'description'    => __('Manage the content in section one of the front page.', 'mars'),
+  ) );
+
+    $wp_customize->add_setting( 'section_one_toggle_display' , array(
+        'default'     => 'show',
+        'transport'   => 'refresh',
+  ) );
+
+    $wp_customize->add_control( 'section_one_toggle_display', array(
+        'label' => 'Toggle Section Display',
+        'section' => 'mars_frontpage_section_one',
+        'settings' => 'section_one_toggle_display',
+        'type' => 'radio',
+        'choices' => array(
+          'show' => 'Show',
+          'hide' => 'Hide',
+        ),
+  ) );
+
+  // Create card text heading field.
+  $wp_customize->add_setting( 'section_one_card_heading' , array(
+      'transport'   => 'refresh',
+  ) );
+
+  $wp_customize->add_control( 'section_one_card_heading', array(
+      'label' => 'Card Heading',
+      'section' => 'mars_frontpage_section_one',
+      'type'   => 'text',
+  ) );
+
+  // Create card text.
+  $wp_customize->add_setting( 'section_one_card_text' , array(
+      'transport'   => 'refresh',
+  ) );
+
+  $wp_customize->add_control( 'section_one_card_text', array(
+      'label' => 'Card Text (HTML Allowed)',
+      'section' => 'mars_frontpage_section_one',
+      'type'   => 'textarea',
+  ) );
+
+  // Right column text.
+  $wp_customize->add_setting( 'section_one_right_column_text' , array(
+      'transport'   => 'refresh',
+  ) );
+
+  $wp_customize->add_control( 'section_one_right_column_text', array(
+      'label' => 'Right Column Text (HTML Allowed)',
+      'section' => 'mars_frontpage_section_one',
+      'type'   => 'textarea',
+  ) );
+
+  // Create section for second section options.
+  $wp_customize->add_section( 'mars_frontpage_section_two' , array(
+    'title'      => 'Section Two Options',
+    'priority'   => 30,
+    'panel'  => 'panel_front_page',
+    'description'    => __('Manage the content in section two of the front page.', 'mars'),
+  ) );
+
+    $wp_customize->add_setting( 'section_two_toggle_display' , array(
+        'default'     => 'show',
+        'transport'   => 'refresh',
+  ) );
+
+    $wp_customize->add_control( 'section_two_toggle_display', array(
+        'label' => 'Toggle Section Display',
+        'section' => 'mars_frontpage_section_two',
+        'settings' => 'section_two_toggle_display',
+        'type' => 'radio',
+        'choices' => array(
+          'show' => 'Show',
+          'hide' => 'Hide',
+        ),
+  ) );
+
+  // Create section two image upload form control.
+  $wp_customize->add_setting( 'section_two_image' , array(
+      'transport'   => 'refresh',
+  ) );
+
+  $wp_customize->add_control(
+       new WP_Customize_Image_Control(
+           $wp_customize,
+           'logo',
+           array(
+               'label'      => __( 'Section Image', 'mars' ),
+               'section'    => 'mars_frontpage_section_two',
+               'settings'   => 'section_two_image',
+           )
+       )
+   );
+
+  // Create second image caption text field.
+  $wp_customize->add_setting( 'section_two_image_caption' , array(
+      'transport'   => 'refresh',
+  ) );
+
+  $wp_customize->add_control( 'section_two_image_caption', array(
+      'label' => 'Section Image Caption Text',
+      'section' => 'mars_frontpage_section_two',
+      'type'   => 'textarea',
+  ) );
+
+  // Create second image alt text field.
+  $wp_customize->add_setting( 'section_two_image_alt' , array(
+      'transport'   => 'refresh',
+  ) );
+
+  $wp_customize->add_control( 'section_two_image_alt', array(
+      'label' => 'Section Image Alt Text',
+      'section' => 'mars_frontpage_section_two',
+      'type'   => 'textarea',
+  ) );
+
+
+  // Right column text.
+  $wp_customize->add_setting( 'section_two_right_column_text' , array(
+      'transport'   => 'refresh',
+  ) );
+
+  $wp_customize->add_control( 'section_two_right_column_text', array(
+      'label' => 'Right Column Text (HTML Allowed)',
+      'section' => 'mars_frontpage_section_two',
       'type'   => 'textarea',
   ) );
 
   // Pass to customizer.js for real-time updates during theme customization.
+
+  // Hero image settings.
+  $wp_customize->get_setting( 'hero_toggle_display' )->transport = 'postMessage';
   $wp_customize->get_setting( 'hero_image_description' )->transport = 'postMessage';
   $wp_customize->get_setting( 'hero_image_heading' )->transport = 'postMessage';
+
+  // Section one settings.
+  $wp_customize->get_setting( 'section_one_toggle_display' )->transport = 'postMessage';
+  $wp_customize->get_setting( 'section_one_card_heading' )->transport = 'postMessage';
+  $wp_customize->get_setting( 'section_one_card_text' )->transport = 'postMessage';
+  $wp_customize->get_setting( 'section_one_right_column_text' )->transport = 'postMessage';
+
+  // Section two settings.
+  $wp_customize->get_setting( 'section_two_toggle_display' )->transport = 'postMessage';
+  $wp_customize->get_setting( 'section_two_right_column_text' )->transport = 'postMessage';
+  $wp_customize->get_setting( 'section_two_image_caption' )->transport = 'postMessage';
+
+  // Header settings.
   $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
   $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
