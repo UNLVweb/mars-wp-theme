@@ -44,7 +44,7 @@ function mars_customizer_settings( $wp_customize ) {
       'capability'     => 'edit_theme_options',
       'theme_supports' => '',
       'title'          => __('Theme Front Page Options', 'mars'),
-      'description'    => __('Customize your homepage settings.', 'mars'),
+      'description'    => __('Customize your homepage settings.<strong>For your first edits, you will see your changes after you save.</strong>', 'mars'),
   ) );
 
   // Create section Front Page options.
@@ -126,7 +126,7 @@ function mars_customizer_settings( $wp_customize ) {
     'title'      => 'Section One Options',
     'priority'   => 30,
     'panel'  => 'panel_front_page',
-    'description'    => __('Manage the content in section one of the front page.', 'mars'),
+    'description'    => __('Manage the content in section one of the front page.<br><br><strong>For your first edit, you may not see your changes until you save.</strong>', 'mars'),
   ) );
 
     $wp_customize->add_setting( 'section_one_toggle_display' , array(
@@ -183,7 +183,7 @@ function mars_customizer_settings( $wp_customize ) {
     'title'      => 'Section Two Options',
     'priority'   => 30,
     'panel'  => 'panel_front_page',
-    'description'    => __('Manage the content in section two of the front page.', 'mars'),
+    'description'    => __('Manage the content in section two of the front page.<br><br><strong>For your first edit, you may not see your changes until you save.</strong>', 'mars'),
   ) );
 
     $wp_customize->add_setting( 'section_two_toggle_display' , array(
@@ -258,7 +258,7 @@ function mars_customizer_settings( $wp_customize ) {
     'title'      => 'Advanced Options',
     'priority'   => 30,
     'panel'  => 'panel_front_page',
-    'description'    => __('Using HTML, create custom content for your front page. For a completely custom front page, you can hide section one, section two, and the hero image by setting their display option to "Hide".<br><br><strong>Output appears at the bottom of the page content.</strong>', 'mars'),
+    'description'    => __('Using HTML, create custom content for your front page. For a completely custom front page, you can hide section one, section two, and the hero image by setting their display option to "Hide".<br><br><strong>For your first edit, you may not see your changes until you save.</strong>', 'mars'),
   ) );
 
     // Create second image caption text field.
