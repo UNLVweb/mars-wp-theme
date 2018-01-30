@@ -167,7 +167,7 @@ get_header(); ?>
             if ( get_theme_mod( 'frontpage_advanced_content', true ) ) {
               ?>
               <div id="front-page-custom-content">
-                <?php echo get_theme_mod( 'frontpage_advanced_content', '' ); ?>
+                <?php echo get_theme_mod( 'frontpage_advanced_content' ); ?>
               </div>
               <?php
             }
