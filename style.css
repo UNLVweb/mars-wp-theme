@@ -14,3 +14,9 @@ Tags: one-column
 #secondary > aside {
   margin-bottom: 15px;
 }
+.alignright {
+	float: right;
+}
+.alignleft {
+	float: left;
+}
