@@ -258,7 +258,7 @@ function mars_customizer_settings( $wp_customize ) {
     'title'      => 'Advanced Options',
     'priority'   => 30,
     'panel'  => 'panel_front_page',
-    'description'    => __('Using HTML, create custom content for your front page. For a completely custom front page, you can hide section one, section two, and the hero image by setting their display option to "Hide".', 'mars'),
+    'description'    => __('Using HTML, create custom content for your front page. For a completely custom front page, you can hide section one, section two, and the hero image by setting their display option to "Hide".<br><br><strong>Output appears at the bottom of the page content.</strong>', 'mars'),
   ) );
 
     // Create second image caption text field.
@@ -267,7 +267,7 @@ function mars_customizer_settings( $wp_customize ) {
   ) );
 
   $wp_customize->add_control( 'frontpage_advanced_content', array(
-      'label' => 'Custom Code',
+      'label' => 'Custom Code (HTML Allowed)',
       'section' => 'mars_frontpage_advanced',
       'type'   => 'textarea',
   ) );
