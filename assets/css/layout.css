@@ -55,7 +55,7 @@ html {
 
 /* Body position */
 body.navbar-is-fixed-top {
-	padding-top: 72px !important;
+	padding-top: 27px !important; /* change from 72px to 27px to remove white space above hero on tiny devices*/
 }
 body.admin-menu.navbar-is-fixed-top {
 	padding-top:120px !important; /* Drupal admin bar height + navbar height */
