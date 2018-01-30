@@ -144,7 +144,7 @@ get_header(); ?>
 
 
                       if (get_theme_mod( 'section_two_right_column_text' ))
-                        $section_two_right_column_text = get_theme_mod( 'section_two_image_alt');
+                        $section_two_right_column_text = get_theme_mod( 'section_two_right_column_text');
                       else
                         $section_two_right_column_text = '<h3 class="clear-margin-top">Header Title</h3>
                       <p>Praesent porttitor velit id venenatis sollicitudin. Nullam id mollis elit, at mollis eros. Sed non interdum quam, non sollicitudin justo. Maecenas porta arcu nec elit malesuada ullamcorper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>';
