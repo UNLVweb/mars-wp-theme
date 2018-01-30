@@ -79,7 +79,7 @@ function mars_customizer_settings( $wp_customize ) {
   $wp_customize->add_control(
        new WP_Customize_Image_Control(
            $wp_customize,
-           'logo',
+           'hero_image',
            array(
                'label'      => __( 'Hero Image', 'mars' ),
                'section'    => 'mars_frontpage_hero_image',
