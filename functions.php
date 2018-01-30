@@ -19,7 +19,6 @@ include('inc/customizer.php');
  *
  * @link https://codex.wordpress.org/Navigation_Menus
  */
-
 function mars_register_menus() {
   register_nav_menus(
     array(
@@ -31,6 +30,34 @@ function mars_register_menus() {
   );
 }
 add_action( 'init', 'mars_register_menus' );
+
+
+/**
+ * Sets default values for theme for the display toggles.
+ *
+ */
+function mars_set_theme_mods() {
+
+  // If hero toggle not set, set it to "show".
+  if ( !get_theme_mod( 'hero_toggle_display' ) )
+      set_theme_mod ( 'hero_toggle_display', 'show' );
+
+  // If section_one_toggle_display not set, set it to "show".
+  if ( !get_theme_mod( 'section_one_toggle_display' ) )
+      set_theme_mod ( 'section_one_toggle_display', 'show' );
+
+  // If section_one_toggle_display not set, set it to "show".
+  if ( !get_theme_mod( 'section_two_toggle_display' ) )
+      set_theme_mod ( 'section_two_toggle_display', 'show' );
+
+  // If frontpage_advanced_content not set, set it to "".
+  if ( !get_theme_mod( 'frontpage_advanced_content' ) )
+      set_theme_mod ( 'frontpage_advanced_content', '' );
+
+}
+ 
+add_action( 'init', 'mars_set_theme_mods' );
+
 
 /**
  * Removes WordPress Header margin-top when logged in
