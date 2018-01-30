@@ -62,7 +62,7 @@ body.admin-menu.navbar-is-fixed-top {
 }
 	@media (min-width: 768px) {
 		body.navbar-is-fixed-top {
-			padding-top: 104px !important;
+			padding-top: 73px !important; /* changed from 104px to 73px to remove white spacing in wordpress*/
 		}
 		body.admin-menu.navbar-is-fixed-top {
 			padding-top:152px !important;
