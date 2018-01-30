@@ -55,14 +55,14 @@ html {
 
 /* Body position */
 body.navbar-is-fixed-top {
-	padding-top: 27px !important; /* change from 72px to 27px to remove white space above hero on tiny devices*/
+	padding-top: 72px !important;
 }
 body.admin-menu.navbar-is-fixed-top {
 	padding-top:120px !important; /* Drupal admin bar height + navbar height */
 }
 	@media (min-width: 768px) {
 		body.navbar-is-fixed-top {
-			padding-top: 73px !important; /* changed from 104px to 73px to remove white spacing in wordpress*/
+			padding-top: 104px !important;
 		}
 		body.admin-menu.navbar-is-fixed-top {
 			padding-top:152px !important;
