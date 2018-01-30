@@ -33,6 +33,16 @@ function mars_register_menus() {
 add_action( 'init', 'mars_register_menus' );
 
 /**
+ * Removes WordPress Header margin-top when logged in
+ *
+ */
+function remove_admin_login_header() {
+    remove_action('wp_head', '_admin_bar_bump_cb');
+}
+add_action('get_header', 'remove_admin_login_header');
+
+
+/**
  * Default Topics menu in header.
  *
  */
