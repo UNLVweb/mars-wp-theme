@@ -30,7 +30,7 @@ get_header(); ?>
             <?php endif; ?>
 
             <?php
-            if (get_theme_mod( 'hero_toggle_display' ) == 'show') {
+            if (get_theme_mod( 'hero_toggle_display', 'show' ) == 'show') {
               ?>
               <section class="hero" id="hero-image">
                 <?php
@@ -71,7 +71,7 @@ get_header(); ?>
             ?>
 
             <?php
-            if (get_theme_mod( 'section_one_toggle_display' ) == 'show') {
+            if (get_theme_mod( 'section_one_toggle_display', 'show' ) == 'show') {
 
               if (get_theme_mod( 'section_one_card_heading' ))
                 $section_one_card_heading = get_theme_mod( 'section_one_card_heading' );
@@ -120,7 +120,7 @@ get_header(); ?>
             }
             ?>
             <?php
-            if (get_theme_mod( 'section_two_toggle_display' ) == 'show') {
+            if (get_theme_mod( 'section_two_toggle_display', 'show' ) == 'show') {
               ?>            
               <section class="bg-tan" id="section-two">
                 <div class="container">
@@ -164,10 +164,10 @@ get_header(); ?>
             }
 
             // Display custom HTML.
-            if ( get_theme_mod( 'frontpage_advanced_content' ) ) {
+            if ( get_theme_mod( 'frontpage_advanced_content', true ) ) {
               ?>
               <div id="front-page-custom-content">
-                <?php echo get_theme_mod( 'frontpage_advanced_content' ); ?>
+                <?php echo get_theme_mod( 'frontpage_advanced_content', '' ); ?>
               </div>
               <?php
             }
