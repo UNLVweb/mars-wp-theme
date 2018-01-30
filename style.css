@@ -14,3 +14,13 @@ Tags: one-column
 #secondary > aside {
   margin-bottom: 15px;
 }
+.alignright{
+	float: right;
+	padding-left: 20px;
+	padding-bottom: 20px;
+}
+.alignleft{
+	float: left;
+	padding-right: 20px;
+	padding-bottom: 20px;
+}
