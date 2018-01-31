@@ -38,9 +38,9 @@ add_action( 'init', 'mars_register_menus' );
  */
 function mars_set_theme_mods() {
 
-  $theme_mods = get_theme_mods();
+  //$theme_mods = get_theme_mods();
 
-  print_r($theme_mods);
+  //print_r($theme_mods);
 
   // If hero toggle not set, set it to "show".
   if ( !get_theme_mod( 'hero_toggle_display' ) )
