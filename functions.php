@@ -38,6 +38,10 @@ add_action( 'init', 'mars_register_menus' );
  */
 function mars_set_theme_mods() {
 
+  $theme_mods = get_theme_mods();
+
+  print_r($theme_mods);
+
   // If hero toggle not set, set it to "show".
   if ( !get_theme_mod( 'hero_toggle_display' ) )
       set_theme_mod ( 'hero_toggle_display', 'show' );
@@ -54,6 +58,43 @@ function mars_set_theme_mods() {
   if ( !get_theme_mod( 'frontpage_advanced_content' ) )
       set_theme_mod ( 'frontpage_advanced_content', '' );
 
+  /*
+  // If hero_image_heading not set, set it to default value.
+  if ( !get_theme_mod( 'hero_image_heading' ) )
+      set_theme_mod ( 'hero_image_heading', 'Life at UNLV: Something for Everyone' );
+
+  // If hero_image_description not set, set it to default value.
+  if ( !get_theme_mod( 'hero_image_description' ) )
+      set_theme_mod ( 'hero_image_description', 'We don\'t separate life and education. At UNLV living is learning.' );
+
+
+  // If section_one_card_heading not set, set it to default value.
+  if ( !get_theme_mod( 'section_one_card_heading' ) )
+      set_theme_mod ( 'section_one_card_heading', 'Welcome' );
+
+  // If section_one_card_text not set, set it to default value.
+  if ( !get_theme_mod( 'section_one_card_text' ) )
+      set_theme_mod ( 'section_one_card_text', '<p>Praesent porttitor velit id venenatis sollicitudin. Nullam id mollis elit, at mollis eros. Sed non interdum quam, non sollicitudin justo. Maecenas porta arcu nec elit malesuada ullamcorper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+                    <p>Vestibulum accumsan tortor et imperdiet dictum. Proin lacus libero, varius eget gravida eget, dapibus eu nunc.</p>
+                      <p class="clear-margin-bottom"><a class="btn btn-primary" role="button" href="#">Button</a></p>' );
+
+  // If section_one_right_column_text not set, set it to default value.
+  if ( !get_theme_mod( 'section_one_right_column_text' ) )
+      set_theme_mod ( 'section_one_right_column_text', '<p>Nunc tortor ante, volutpat ut eros non, porta porttitor orci. Pellentesque lectus turpis, auctor at faucibus gravida, semper ac arcu.</p>
+                    <ul>
+                      <li>Nullam bibendum nunc lobortis ante gravida euismod.</li>
+                      <li>Nullam condimentum mi sit amet pellentesque molestie.</li>
+                      <li>Fusce pellentesque nunc eget scelerisque bibendum.</li>
+                      <li>Fusce accumsan ipsum vel erat commodo feugiat.</li>
+                      <li>Cras nec nunc in est finibus pulvinar.</li>
+                    </ul>' );
+
+
+  // If section_two_right_column_text not set, set it to default value.
+  if ( !get_theme_mod( 'section_two_right_column_text' ) )
+      set_theme_mod ( 'section_two_right_column_text', '<h3 class="clear-margin-top">Header Title</h3>
+                      <p>Praesent porttitor velit id venenatis sollicitudin. Nullam id mollis elit, at mollis eros. Sed non interdum quam, non sollicitudin justo. Maecenas porta arcu nec elit malesuada ullamcorper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>' );
+  */
 }
  
 add_action( 'init', 'mars_set_theme_mods' );
@@ -76,12 +117,12 @@ add_action('get_header', 'remove_admin_login_header');
 function mars_default_topic_menu() {
   $html = '<a class="btn btn-default dropdown-toggle" role="button" id="topic-dropdown" data-toggle="dropdown" aria-haspopup="true" tabindex="6">Topics <span class="caret"></span></a>
                   <ul class="dropdown-menu dropdown-menu-right" role="navigation" aria-label="topics dropdown">
-                    <li class="menu-13004 first"><a href="/about" title="About">About</a></li>
-                    <li class="menu-13005"><a href="/academics" title="Academics">Academics</a></li>
-                    <li class="menu-13032"><a href="/apply" title="Admissions">Admissions</a></li>
-                    <li class="menu-13033"><a href="/athletics" title="Athletics">Athletics</a></li>
-                    <li class="menu-13006"><a href="/campuslife" title="Campus Life">Campus Life</a></li>
-                    <li class="menu-13031 last"><a href="/about-research" title="Research">Research</a></li>
+                    <li class="menu-13004 first"><a href="https://www.unlv.edu/about" title="About">About</a></li>
+                    <li class="menu-13005"><a href="https://www.unlv.edu/academics" title="Academics">Academics</a></li>
+                    <li class="menu-13032"><a href="https://www.unlv.edu/apply" title="Admissions">Admissions</a></li>
+                    <li class="menu-13033"><a href="https://www.unlv.edu/athletics" title="Athletics">Athletics</a></li>
+                    <li class="menu-13006"><a href="https://www.unlv.edu/campuslife" title="Campus Life">Campus Life</a></li>
+                    <li class="menu-13031 last"><a href="https://www.unlv.edu/about-research" title="Research">Research</a></li>
                   </ul>  ';
   echo $html;
 } // end mars_default_topic_menu
@@ -93,11 +134,11 @@ function mars_default_topic_menu() {
 function mars_default_audience_menu() {
   $html = '<a class="btn btn-default dropdown-toggle" role="button" id="audience-dropdown" data-toggle="dropdown" aria-haspopup="true" tabindex="7 ">Audiences <span class="caret"></span></a>
                   <ul class="dropdown-menu dropdown-menu-right" role="navigation" aria-label="audiences dropdown">
-                    <li class="menu-13034 first"><a href="/students" title="Students">Students</a></li>
-                    <li class="menu-13035"><a href="/facultystaff" title="Faculty/Staff">Faculty/Staff</a></li>
-                    <li class="menu-13036"><a href="/alumni" title="Alumni">Alumni</a></li>
-                    <li class="menu-13037"><a href="/donors" title="Donors">Donors</a></li>
-                    <li class="menu-13038 last"><a href="/community" title="Community">Community</a></li>
+                    <li class="menu-13034 first"><a href="https://www.unlv.edu/students" title="Students">Students</a></li>
+                    <li class="menu-13035"><a href="https://www.unlv.edu/facultystaff" title="Faculty/Staff">Faculty/Staff</a></li>
+                    <li class="menu-13036"><a href="https://www.unlv.edu/alumni" title="Alumni">Alumni</a></li>
+                    <li class="menu-13037"><a href="https://www.unlv.edu/donors" title="Donors">Donors</a></li>
+                    <li class="menu-13038 last"><a href="https://www.unlv.edu/community" title="Community">Community</a></li>
                   </ul>';
   echo $html;
 } // end mars_default_audience_menu

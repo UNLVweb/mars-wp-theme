@@ -34,6 +34,7 @@ get_header(); ?>
               ?>
               <section class="hero" id="hero-image">
                 <?php
+                // Forcing a hero image and alt, if one is not provided.
                 if (get_theme_mod( 'hero_image' ))
                   $hero_image_path = get_theme_mod( 'hero_image');
                 else
@@ -51,15 +52,15 @@ get_header(); ?>
                   <div class="hero-text">
                     <div class="hero-text-inner">
                       <?php
-                      if (get_theme_mod( 'hero_image_heading' ))
+                      if ( get_theme_mod( 'hero_image_heading' ) )
                         $hero_image_heading = htmlspecialchars(get_theme_mod( 'hero_image_heading'));
                       else
-                        $hero_image_heading = 'Life at UNLV: Something for Everyone';
+                        $hero_image_heading = '';
 
-                      if (get_theme_mod( 'hero_image_description' ))
+                      if ( get_theme_mod( 'hero_image_description' ) )
                         $hero_image_description = get_theme_mod( 'hero_image_description' );
-                        else
-                        $hero_image_description = "We don't separate life and education. At UNLV living is learning.";
+                      else
+                        $hero_image_description = '';
                       ?>
                         <h2 id="hero-heading"><?php echo $hero_image_heading; ?></h2>
                         <p id="hero-description"><?php echo $hero_image_description; ?></p>
@@ -71,31 +72,22 @@ get_header(); ?>
             ?>
 
             <?php
-            if (get_theme_mod( 'section_one_toggle_display' ) == 'show') {
+            if ( get_theme_mod( 'section_one_toggle_display' ) == 'show' ) {
 
-              if (get_theme_mod( 'section_one_card_heading' ))
+              if ( get_theme_mod( 'section_one_card_heading' ) )
                 $section_one_card_heading = get_theme_mod( 'section_one_card_heading' );
               else
-                $section_one_card_heading = 'Welcome';
+                $section_one_card_heading = '';
 
-              if (get_theme_mod( 'section_one_card_text' ))
+              if ( get_theme_mod( 'section_one_card_text' ) )
                 $section_one_card_text = get_theme_mod( 'section_one_card_text' );
               else
-                $section_one_card_text = '<p>Praesent porttitor velit id venenatis sollicitudin. Nullam id mollis elit, at mollis eros. Sed non interdum quam, non sollicitudin justo. Maecenas porta arcu nec elit malesuada ullamcorper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
-                    <p>Vestibulum accumsan tortor et imperdiet dictum. Proin lacus libero, varius eget gravida eget, dapibus eu nunc.</p>
-                      <p class="clear-margin-bottom"><a class="btn btn-primary" role="button" href="#">Button</a></p>';      
+                $section_one_card_text = '';      
                       
-              if (get_theme_mod( 'section_one_right_column_text' ))
+              if ( get_theme_mod( 'section_one_right_column_text' ) )
                 $section_one_right_column_text = get_theme_mod( 'section_one_right_column_text' );
               else
-                $section_one_right_column_text = '<p>Nunc tortor ante, volutpat ut eros non, porta porttitor orci. Pellentesque lectus turpis, auctor at faucibus gravida, semper ac arcu.</p>
-                    <ul>
-                      <li>Nullam bibendum nunc lobortis ante gravida euismod.</li>
-                      <li>Nullam condimentum mi sit amet pellentesque molestie.</li>
-                      <li>Fusce pellentesque nunc eget scelerisque bibendum.</li>
-                      <li>Fusce accumsan ipsum vel erat commodo feugiat.</li>
-                      <li>Cras nec nunc in est finibus pulvinar.</li>
-                    </ul>';   
+                $section_one_right_column_text = '';   
               ?>
               <section class="bg-white" id="section-one">
               <div class="container">
@@ -127,6 +119,8 @@ get_header(); ?>
                   <div class="row">
                     <div class="col-sm-5">
                       <?php
+
+                      // Force Defaults on image.
                       if (get_theme_mod( 'section_two_image' ))
                         $section_two_image = get_theme_mod( 'section_two_image');
                       else
@@ -140,14 +134,13 @@ get_header(); ?>
                       if (get_theme_mod( 'section_two_image_caption' ))
                         $section_two_image_caption = get_theme_mod( 'section_two_image_caption');
                       else
-                        $section_two_image_caption = 'Image Caption.';
+                        $section_two_image_caption = '';
 
 
-                      if (get_theme_mod( 'section_two_right_column_text' ))
-                        $section_two_right_column_text = get_theme_mod( 'section_two_right_column_text');
+                      if ( get_theme_mod( 'section_two_right_column_text' ))
+                        $section_two_right_column_text = get_theme_mod( 'section_two_right_column_text' );
                       else
-                        $section_two_right_column_text = '<h3 class="clear-margin-top">Header Title</h3>
-                      <p>Praesent porttitor velit id venenatis sollicitudin. Nullam id mollis elit, at mollis eros. Sed non interdum quam, non sollicitudin justo. Maecenas porta arcu nec elit malesuada ullamcorper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>';
+                        $section_two_right_column_text = '';
                       ?>                    
                     <figure>
                       <?php echo '<img src="' . $section_two_image . '" alt="' . $section_two_image_alt . '" class="img-responsive"/>'; ?>
