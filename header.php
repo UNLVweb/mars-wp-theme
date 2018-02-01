@@ -94,10 +94,10 @@
       </nav>
     </header>
 
-    <div id="navigation" role="navigation" aria-label="Style Guide navigation">
+    <div id="navigation" role="navigation" aria-label="<?php echo get_bloginfo( 'description' ); ?> navigation">
 
       <div class="scroller" id="navigation-scroller" tabindex="-1">
-        <div class="nav-close"><a href="#" id="menu-close">close Style Guide menu</a></div>
+        <div class="nav-close"><a href="#" id="menu-close">close <?php echo get_bloginfo( 'description' ); ?> menu</a></div>
         <h2><?php echo get_bloginfo( 'description' ); ?></h2>
         <div class="region region-section-menu">
           <?php
