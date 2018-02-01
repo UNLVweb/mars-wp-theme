@@ -47,6 +47,10 @@ function mars_customizer_settings( $wp_customize ) {
       'description'    => __('Customize your homepage settings.<strong>To view your changes, please Publish first.</strong>', 'mars'),
   ) );
 
+
+  // Hero Image Options
+  // ##############################################
+
   // Create section Front Page options.
   $wp_customize->add_section( 'mars_frontpage_hero_image' , array(
     'title'      => 'Hero Image Settings',
@@ -64,6 +68,7 @@ function mars_customizer_settings( $wp_customize ) {
         'label' => 'Toggle Hero Display',
         'section' => 'mars_frontpage_hero_image',
         'settings' => 'hero_toggle_display',
+        'description' => __( 'Show or hide the Hero Image?'),
         'type' => 'radio',
         'choices' => array(
           'show' => 'Show',
@@ -74,6 +79,7 @@ function mars_customizer_settings( $wp_customize ) {
   // Create hero image upload form control.
   $wp_customize->add_setting( 'hero_image' , array(
       'transport'   => 'refresh',
+      'default' => get_template_directory_uri() . '/assets/images/D65847_18.jpg',
   ) );
 
   $wp_customize->add_control(
@@ -82,6 +88,7 @@ function mars_customizer_settings( $wp_customize ) {
            'hero_image',
            array(
                'label'      => __( 'Hero Image', 'mars' ),
+               /*'description' => __( 'When no image selected, a default campus image is used.' ),*/               
                'section'    => 'mars_frontpage_hero_image',
                'settings'   => 'hero_image',
            )
@@ -121,7 +128,9 @@ function mars_customizer_settings( $wp_customize ) {
       'type'   => 'textarea',
   ) );
 
-  // Create section for first section options.
+  // Section One Options
+  // ##############################################
+
   $wp_customize->add_section( 'mars_frontpage_section_one' , array(
     'title'      => 'Section One Options',
     'priority'   => 30,
@@ -137,6 +146,7 @@ function mars_customizer_settings( $wp_customize ) {
     $wp_customize->add_control( 'section_one_toggle_display', array(
         'label' => 'Toggle Section Display',
         'section' => 'mars_frontpage_section_one',
+        'description' => __( 'You will need to refresh the page after you publish when showing a section.' ),
         'settings' => 'section_one_toggle_display',
         'type' => 'radio',
         'choices' => array(
@@ -178,6 +188,9 @@ function mars_customizer_settings( $wp_customize ) {
       'type'   => 'textarea',
   ) );
 
+  // Section Two Options
+  // ##############################################
+
   // Create section for second section options.
   $wp_customize->add_section( 'mars_frontpage_section_two' , array(
     'title'      => 'Section Two Options',
@@ -186,25 +199,27 @@ function mars_customizer_settings( $wp_customize ) {
     'description'    => __('Manage the content in section two of the front page.<br><br><strong>To view your changes, please Publish first.</strong>', 'mars'),
   ) );
 
-    $wp_customize->add_setting( 'section_two_toggle_display' , array(
-        'default'     => 'show',
-        'transport'   => 'refresh',
+  $wp_customize->add_setting( 'section_two_toggle_display' , array(
+      'default'     => 'show',
+      'transport'   => 'refresh',
   ) );
 
-    $wp_customize->add_control( 'section_two_toggle_display', array(
-        'label' => 'Toggle Section Display',
-        'section' => 'mars_frontpage_section_two',
-        'settings' => 'section_two_toggle_display',
-        'type' => 'radio',
-        'choices' => array(
+  $wp_customize->add_control( 'section_two_toggle_display', array(
+      'label' => 'Toggle Section Display',
+      'section' => 'mars_frontpage_section_two',
+      'settings' => 'section_two_toggle_display',
+      'description' => __( 'You will need to refresh the page after you publish when showing a section.' ),      
+      'type' => 'radio',
+      'choices' => array(
           'show' => 'Show',
           'hide' => 'Hide',
-        ),
+      ),
   ) );
 
   // Create section two image upload form control.
   $wp_customize->add_setting( 'section_two_image' , array(
       'transport'   => 'refresh',
+      'default' => get_template_directory_uri() . '/assets/images/D67387_23-1.jpg',
   ) );
 
   $wp_customize->add_control(
@@ -241,7 +256,6 @@ function mars_customizer_settings( $wp_customize ) {
       'type'   => 'textarea',
   ) );
 
-
   // Right column text.
   $wp_customize->add_setting( 'section_two_right_column_text' , array(
       'transport'   => 'refresh',
@@ -253,15 +267,18 @@ function mars_customizer_settings( $wp_customize ) {
       'type'   => 'textarea',
   ) );
 
- // Create section for advanced options.
+  // Advanced Options
+  // ##############################################
+
+  // Create section for advanced options.
   $wp_customize->add_section( 'mars_frontpage_advanced' , array(
-    'title'      => 'Advanced Options',
-    'priority'   => 30,
-    'panel'  => 'panel_front_page',
-    'description'    => __('Using HTML, create custom content for your front page. For a completely custom front page, you can hide section one, section two, and the hero image by setting their display option to "Hide".<br><br><strong>To view your changes, please Publish first.</strong>', 'mars'),
+      'title'      => 'Advanced Options',
+      'priority'   => 30,
+      'panel'  => 'panel_front_page',
+      'description'    => __('Using HTML, create custom content for your front page. For a completely custom front page, you can hide section one, section two, and the hero image by setting their display option to "Hide"', 'mars'),
   ) );
 
-    // Create second image caption text field.
+  // Create second image caption text field.
   $wp_customize->add_setting( 'frontpage_advanced_content' , array(
       'transport'   => 'refresh',
   ) );
@@ -270,8 +287,8 @@ function mars_customizer_settings( $wp_customize ) {
       'label' => 'Custom Code (HTML Allowed)',
       'section' => 'mars_frontpage_advanced',
       'type'   => 'textarea',
+      'description' => __( '<strong>Content will appear at bottom of page.</strong>' ),
   ) );
-
 
   // Pass to customizer.js for real-time updates during theme customization.
 

@@ -38,48 +38,78 @@ add_action( 'init', 'mars_register_menus' );
  */
 function mars_set_theme_mods() {
 
-  //$theme_mods = get_theme_mods();
+  // @debug
+  // Clear theme mod variables.
+  /*
+  remove_theme_mod ( 'hero_toggle_display' );
+  remove_theme_mod ( 'hero_image' );
+  remove_theme_mod ( 'hero_image_heading' );
+  remove_theme_mod ( 'hero_image_alt' );
+  remove_theme_mod ( 'hero_image_description' );
 
-  //print_r($theme_mods);
+  remove_theme_mod ( 'section_one_toggle_display' );
+  remove_theme_mod ( 'section_one_card_heading' );
+  remove_theme_mod ( 'section_one_card_text' );
+  remove_theme_mod ( 'section_one_right_column_text' );
+
+  remove_theme_mod ( 'section_two_toggle_display' );  
+  remove_theme_mod ( 'section_two_right_column_text' );
+  remove_theme_mod ( 'section_two_image' );  
+  remove_theme_mod ( 'section_two_image_caption' );  
+  remove_theme_mod ( 'section_two_image_alt' );  
+  remove_theme_mod ( 'section_two_right_column_text' );  
+
+  remove_theme_mod ( 'frontpage_advanced_content' ); 
+
+  echo '<pre>';
+    print_r(get_theme_mods());
+  echo '</pre>';
+  */
+
+  $theme_mods = get_theme_mods();
+
+  // Hero Image Defaults
+  // ##############################################
 
   // If hero toggle not set, set it to "show".
-  if ( !get_theme_mod( 'hero_toggle_display' ) )
+  if ( !isset( $theme_mods['hero_toggle_display'] ) )
       set_theme_mod ( 'hero_toggle_display', 'show' );
 
-  // If section_one_toggle_display not set, set it to "show".
-  if ( !get_theme_mod( 'section_one_toggle_display' ) )
-      set_theme_mod ( 'section_one_toggle_display', 'show' );
+  // Set default image for hero image if no image is provided.
+  if ( !isset( $theme_mods['hero_image']) )
+      set_theme_mod ( 'hero_image', get_template_directory_uri() . '/assets/images/D65847_18.jpg' );
 
-  // If section_one_toggle_display not set, set it to "show".
-  if ( !get_theme_mod( 'section_two_toggle_display' ) )
-      set_theme_mod ( 'section_two_toggle_display', 'show' );
-
-  // If frontpage_advanced_content not set, set it to "".
-  if ( !get_theme_mod( 'frontpage_advanced_content' ) )
-      set_theme_mod ( 'frontpage_advanced_content', '' );
-
-  /*
   // If hero_image_heading not set, set it to default value.
-  if ( !get_theme_mod( 'hero_image_heading' ) )
+  if ( !isset( $theme_mods['hero_image_heading'] ) )
       set_theme_mod ( 'hero_image_heading', 'Life at UNLV: Something for Everyone' );
 
+  // If hero_image_heading not set, set it to default value.
+  if ( !isset( $theme_mods['hero_image_alt'] ) )
+      set_theme_mod ( 'hero_image_alt', 'Night time shot of Lied Library, with Las Vegas Strip in background.' );
+
   // If hero_image_description not set, set it to default value.
-  if ( !get_theme_mod( 'hero_image_description' ) )
+  if ( !isset( $theme_mods['hero_image_description'] ) )
       set_theme_mod ( 'hero_image_description', 'We don\'t separate life and education. At UNLV living is learning.' );
 
+  // Section One Defaults
+  // ##############################################
+
+  // If section_one_toggle_display not set, set it to "show".
+  if ( !isset( $theme_mods['section_one_toggle_display'] ) )
+      set_theme_mod ( 'section_one_toggle_display', 'show' );
 
   // If section_one_card_heading not set, set it to default value.
-  if ( !get_theme_mod( 'section_one_card_heading' ) )
+  if ( !isset( $theme_mods['section_one_card_heading'] ) )
       set_theme_mod ( 'section_one_card_heading', 'Welcome' );
 
   // If section_one_card_text not set, set it to default value.
-  if ( !get_theme_mod( 'section_one_card_text' ) )
+  if ( !isset( $theme_mods['section_one_card_text'] ) )
       set_theme_mod ( 'section_one_card_text', '<p>Praesent porttitor velit id venenatis sollicitudin. Nullam id mollis elit, at mollis eros. Sed non interdum quam, non sollicitudin justo. Maecenas porta arcu nec elit malesuada ullamcorper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
                     <p>Vestibulum accumsan tortor et imperdiet dictum. Proin lacus libero, varius eget gravida eget, dapibus eu nunc.</p>
                       <p class="clear-margin-bottom"><a class="btn btn-primary" role="button" href="#">Button</a></p>' );
 
   // If section_one_right_column_text not set, set it to default value.
-  if ( !get_theme_mod( 'section_one_right_column_text' ) )
+  if ( !isset( $theme_mods['section_one_right_column_text'] ) )
       set_theme_mod ( 'section_one_right_column_text', '<p>Nunc tortor ante, volutpat ut eros non, porta porttitor orci. Pellentesque lectus turpis, auctor at faucibus gravida, semper ac arcu.</p>
                     <ul>
                       <li>Nullam bibendum nunc lobortis ante gravida euismod.</li>
@@ -89,11 +119,40 @@ function mars_set_theme_mods() {
                       <li>Cras nec nunc in est finibus pulvinar.</li>
                     </ul>' );
 
+  // Section Two Defaults
+  // ##############################################
+
+  // If section_one_toggle_display not set, set it to "show".
+  if ( !isset( $theme_mods['section_two_toggle_display'] ) )
+      set_theme_mod ( 'section_two_toggle_display', 'show' );
+
+  // Image default.
+  if ( !isset( $theme_mods['section_two_image'] ) )
+      set_theme_mod ( 'section_two_image', get_template_directory_uri() . '/assets/images/D67387_23-1.jpg' );
+
+  // Image default alt attribute. 
+  if ( !isset( $theme_mods['section_two_image_alt'] ) )
+      set_theme_mod ( 'section_two_image_alt', 'Close-up, day-time shot of cube shaped U N L V sign.' );
+
+  // Default image caption. 
+  if ( !isset( $theme_mods['section_two_image_caption'] ) )
+      set_theme_mod ( 'section_two_image_caption', 'Welcome to our campus!' );
 
   // If section_two_right_column_text not set, set it to default value.
-  if ( !get_theme_mod( 'section_two_right_column_text' ) )
+  if ( !isset( $theme_mods['section_two_right_column_text'] ) )
       set_theme_mod ( 'section_two_right_column_text', '<h3 class="clear-margin-top">Header Title</h3>
                       <p>Praesent porttitor velit id venenatis sollicitudin. Nullam id mollis elit, at mollis eros. Sed non interdum quam, non sollicitudin justo. Maecenas porta arcu nec elit malesuada ullamcorper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>' );
+
+  // Section Two Defaults
+  // ##############################################
+
+  // Set to blank string.  
+  if ( !isset( $theme_mods['frontpage_advanced_content'] ) )
+      set_theme_mod ( 'frontpage_advanced_content', '' );    
+  /*
+  echo '<pre>';
+    print_r(get_theme_mods());
+  echo '</pre>';
   */
 }
  
@@ -269,9 +328,6 @@ function mars_scripts() {
   wp_enqueue_style( 'mars-base', get_template_directory_uri() . '/assets/css/base.css' );
   wp_enqueue_style( 'mars-layout', get_template_directory_uri() . '/assets/css/layout.css' );
   wp_enqueue_style( 'mars-content', get_template_directory_uri() . '/assets/css/content.css' );
-
-
-
 }
 
 add_action( 'wp_enqueue_scripts', 'mars_scripts' );

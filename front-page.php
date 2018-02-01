@@ -34,18 +34,10 @@ get_header(); ?>
               ?>
               <section class="hero" id="hero-image">
                 <?php
-                // Forcing a hero image and alt, if one is not provided.
-                if (get_theme_mod( 'hero_image' ))
-                  $hero_image_path = get_theme_mod( 'hero_image');
-                else
-                  $hero_image_path = get_template_directory_uri() . '/assets/images/D65847_18.jpg';
+                $hero_image_path = get_theme_mod( 'hero_image' );
+                $hero_image_alt = htmlspecialchars( get_theme_mod( 'hero_image_alt') );
 
-                if (get_theme_mod( 'hero_image_alt' ))
-                  $hero_image_alt = htmlspecialchars( get_theme_mod( 'hero_image_alt') );
-                else
-                  $hero_image_alt = 'Hero image.';
-
-                  echo '<img src="' . $hero_image_path . '" alt="' . $hero_image_alt . '"/>';
+                echo '<img src="' . $hero_image_path . '" alt="' . $hero_image_alt . '"/>';
                 ?>
 
                 <div class="overlay"></div>
@@ -74,20 +66,10 @@ get_header(); ?>
             <?php
             if ( get_theme_mod( 'section_one_toggle_display' ) == 'show' ) {
 
-              if ( get_theme_mod( 'section_one_card_heading' ) )
-                $section_one_card_heading = get_theme_mod( 'section_one_card_heading' );
-              else
-                $section_one_card_heading = '';
-
-              if ( get_theme_mod( 'section_one_card_text' ) )
-                $section_one_card_text = get_theme_mod( 'section_one_card_text' );
-              else
-                $section_one_card_text = '';      
-                      
-              if ( get_theme_mod( 'section_one_right_column_text' ) )
-                $section_one_right_column_text = get_theme_mod( 'section_one_right_column_text' );
-              else
-                $section_one_right_column_text = '';   
+              $section_one_card_heading = get_theme_mod( 'section_one_card_heading' );
+              $section_one_card_text = get_theme_mod( 'section_one_card_text' );
+              $section_one_right_column_text = get_theme_mod( 'section_one_right_column_text' );
+ 
               ?>
               <section class="bg-white" id="section-one">
               <div class="container">
@@ -119,28 +101,10 @@ get_header(); ?>
                   <div class="row">
                     <div class="col-sm-5">
                       <?php
-
-                      // Force Defaults on image.
-                      if (get_theme_mod( 'section_two_image' ))
-                        $section_two_image = get_theme_mod( 'section_two_image');
-                      else
-                        $section_two_image = get_template_directory_uri() . '/assets/images/D67387_23-1.jpg';
-
-                      if (get_theme_mod( 'section_two_image_alt' ))
-                        $section_two_image_alt = htmlspecialchars( get_theme_mod( 'section_two_image_alt') );
-                      else
-                        $section_two_image_alt = 'Supplementary Image.';
-
-                      if (get_theme_mod( 'section_two_image_caption' ))
-                        $section_two_image_caption = get_theme_mod( 'section_two_image_caption');
-                      else
-                        $section_two_image_caption = '';
-
-
-                      if ( get_theme_mod( 'section_two_right_column_text' ))
-                        $section_two_right_column_text = get_theme_mod( 'section_two_right_column_text' );
-                      else
-                        $section_two_right_column_text = '';
+                      $section_two_image = get_theme_mod( 'section_two_image');
+                      $section_two_image_alt = htmlspecialchars( get_theme_mod( 'section_two_image_alt') );
+                      $section_two_image_caption = get_theme_mod( 'section_two_image_caption');
+                      $section_two_right_column_text = get_theme_mod( 'section_two_right_column_text' );
                       ?>                    
                     <figure>
                       <?php echo '<img src="' . $section_two_image . '" alt="' . $section_two_image_alt . '" class="img-responsive"/>'; ?>
@@ -155,16 +119,8 @@ get_header(); ?>
               </section>
               <?php
             }
-
-            // Display custom HTML.
-            if ( get_theme_mod( 'frontpage_advanced_content' ) ) {
-              ?>
-              <div id="front-page-custom-content">
-                <?php echo get_theme_mod( 'frontpage_advanced_content' ); ?>
-              </div>
-              <?php
-            }
             ?>
+            <div id="front-page-custom-content"><?php echo get_theme_mod( 'frontpage_advanced_content' ); ?></div>
           </section>  <!-- /.block-system-main -->
         </div> <!-- /.region-content -->
       </div> <!-- /#content-main-->
