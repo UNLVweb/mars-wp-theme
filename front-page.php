@@ -75,7 +75,7 @@ get_header(); ?>
               <div class="container">
                 <div class="row">
                   <div class="col-sm-6">
-                    <div class="offset-top card card-block bg-gray">
+                    <div class="offset-top card card-block padding-md bg-gray">
                       <div class="card-title">
                         <h3 class="clear-margin-top" id="card-heading"><?php echo $section_one_card_heading; ?></h3>
                       </div>
@@ -96,7 +96,7 @@ get_header(); ?>
             <?php
             if (get_theme_mod( 'section_two_toggle_display' ) == 'show') {
               ?>            
-              <section class="bg-tan" id="section-two">
+              <section class="bg-gray" id="section-two">
                 <div class="container">
                   <div class="row">
                     <div class="col-sm-5">
