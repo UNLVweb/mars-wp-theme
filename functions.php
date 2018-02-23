@@ -23,9 +23,11 @@ function mars_register_menus() {
   register_nav_menus(
     array(
       'header-menu' => __( 'Header Menu' ),
+/*
       'footer-menu' => __( 'Footer Menu' ),
       'topic-menu' => __( 'Topics Menu (Advanced Users)' ),
-      'audience-menu' => __( 'Audiences Menu (Advanced Users)' ),      
+      'audience-menu' => __( 'Audiences Menu (Advanced Users)' ),
+*/            
     )
   );
 }
@@ -320,27 +322,33 @@ add_action( 'widgets_init', 'mars_widgets_init' );
  * Enqueue scripts and styles.
  */
 function mars_scripts() {
+
+  $version = '?v=1.0';
+
   wp_enqueue_style( 'mars-bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' );
   wp_enqueue_style( 'mars-google-font-roboto', 'https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700|Roboto+Condensed:400,100,300,700|Roboto+Mono|Roboto+Slab:400,100,300,400,700' );
   wp_enqueue_style( 'mars-font-awesome-4', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css' );
   wp_enqueue_style( 'mars-style', get_stylesheet_uri() );  
-  wp_enqueue_style( 'mars-bootstrap-4-alpha', get_template_directory_uri() . '/assets/css/bootstrap-4-alpha.css' );
-  wp_enqueue_style( 'mars-base', get_template_directory_uri() . '/assets/css/base.css' );
-  wp_enqueue_style( 'mars-layout', get_template_directory_uri() . '/assets/css/layout.css' );
-  wp_enqueue_style( 'mars-content', get_template_directory_uri() . '/assets/css/content.css' );
+  wp_enqueue_style( 'mars-bootstrap-4-alpha', get_template_directory_uri() . '/assets/css/bootstrap-4-alpha.css' . $version );
+  wp_enqueue_style( 'mars-base', get_template_directory_uri() . '/assets/css/base.css' . $version );
+  wp_enqueue_style( 'mars-layout', get_template_directory_uri() . '/assets/css/layout.css' . $version );
+  wp_enqueue_style( 'mars-content', get_template_directory_uri() . '/assets/css/content.css' . $version );
 }
 
 add_action( 'wp_enqueue_scripts', 'mars_scripts' );
 
 // Add scripts to wp_footer()
 function mars_footer_script() {
-  wp_enqueue_script( 'mars-jquery-min', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js' );
-  wp_enqueue_script( 'mars-bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js' );
-  wp_enqueue_style( 'mars-jquery-ui-css', '//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css' );
 
-  wp_enqueue_script( 'jquery-ui', '//code.jquery.com/ui/1.11.4/jquery-ui.js' );
-  wp_enqueue_script( 'mars-menu', get_template_directory_uri() . '/assets/js/menu.js' );
-  wp_enqueue_script( 'mars-ui', get_template_directory_uri() . '/assets/js/ui.js' );
+  $version = '?v=1.0';
+
+  wp_enqueue_script( 'mars-jquery-min', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js' . $version );
+  wp_enqueue_script( 'mars-bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js' . $version );
+  wp_enqueue_style( 'mars-jquery-ui-css', '//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css' . $version );
+
+  wp_enqueue_script( 'jquery-ui', '//code.jquery.com/ui/1.11.4/jquery-ui.js' . $version );
+  wp_enqueue_script( 'mars-menu', get_template_directory_uri() . '/assets/js/menu.js' . $version );
+  wp_enqueue_script( 'mars-ui', get_template_directory_uri() . '/assets/js/ui.js' . $version );
 
 
 }
