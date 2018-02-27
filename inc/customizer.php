@@ -22,7 +22,7 @@ function mars_change_label_names($translated_text){
             */
             case 'Tagline' :
 
-                $translated_text = __( 'Short Title (Responsive)', 'theme_text_domain' );
+                $translated_text = __( 'Menu and Responsive Mode Title', 'theme_text_domain' );
                 break;
         }
     }
@@ -38,14 +38,29 @@ add_action( 'customize_register', 'mars_customizer_settings' );
  */
 function mars_customizer_settings( $wp_customize ) {
 
+
   // Create homepage panel.
   $wp_customize->add_panel( 'panel_front_page', array(
-      'priority'       => 10,
+      'priority'       => 100,
       'capability'     => 'edit_theme_options',
       'theme_supports' => '',
-      'title'          => __('Theme Front Page Options', 'mars'),
+      'title'          => __('Homepage Settings', 'mars'),
       'description'    => __('Customize your homepage settings.<strong>To view your changes, please Publish first.</strong>', 'mars'),
   ) );
+
+  // Move "Homepage Settings" section into the "Homepage Settings" (panel_front_page) panel.
+  // Customize section title and priority.
+  $wp_customize->get_section( 'static_front_page' )->panel  = 'panel_front_page';
+  $wp_customize->get_section( 'static_front_page' )->priority  = 0;
+  $wp_customize->get_section( 'static_front_page' )->title  = __( 'Homepage Display Options' );
+
+  // Get Tag Line control, we use it as the Short Title.
+  $wp_customize->get_control( 'blogdescription' )->description = __( 'This is used for the menu heading and also replaces your "Site Title" when your website is displayed on a mobile device or tablet.<br><strong>25 character max.</strong>' );
+
+  $wp_customize->get_control( 'blogdescription' )->input_attrs = array( 'maxlength' => 25);
+
+  // Set default favicon.
+  $wp_customize->get_setting( 'site_icon' )->default = get_template_directory_uri() . '/assets/images/D65847_18.jpg';
 
 
   // Hero Image Options
