@@ -14,6 +14,7 @@
 
 get_header(); ?>
 
+    <?php if ( ! is_home() && ! is_front_page() ) : ?>
      <div class="row">
         <div class="col-sm-12">
           <ol class="breadcrumb">
@@ -22,8 +23,9 @@ get_header(); ?>
               <li><?php wp_title(''); ?></li>
             <?php endif; ?>
           </ol>
-        </div>
-      </div>
+        </div> <!-- /.col -->
+      </div> <!-- /.row -->
+    <?php endif; ?>
     </div> <!-- /.system-container -->
 
     <div id="content" class="unlv-node-published">
@@ -45,7 +47,6 @@ get_header(); ?>
                 <div class="row">
 
                   <div class="col-sm-8">
-                    Changed page title again.
                     <?php if ( have_posts() ) : ?>
                       <?php
                       // Start the loop.

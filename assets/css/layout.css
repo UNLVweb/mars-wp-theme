@@ -770,9 +770,9 @@ body.front .website-title {
 		color:#37474f;
 		border-left:solid 5px #90a4ae;
 	}
-	#navigation .menu-section-level-2 .menu-opened > a:after,
-	#navigation .menu-section-level-2 .expanded > a:after {
-		content:"\f0da";
+
+	#navigation ul.menu-sections li.menu-item-has-children > a:after {
+		content:"\f0d7"; /* f0da */
 		font-family:FontAwesome;
 		position:absolute;
 		z-index:10000;
@@ -780,34 +780,44 @@ body.front .website-title {
 	}
 		#navigation .menu-section-level-2 .menu-opened > a:after {
 			content:"\f0d7";
-		}
+	}
+
 /* list links - third level */
-#navigation .menu-section-level-3 {
-	display:none;
+
+#navigation .sub-menu {
+	display:block;
 	border-bottom:solid 1px #ddd;
-	padding-left:25px;
+	padding-left:25px !important;
 }
-	#navigation .menu-section-level-3 li {
+
+/*
+#navigation .sub-menu li a {
+	padding-left:25px !important;
+}
+*/
+
+	#navigation ul.menu-sections li.menu-item-has-children ul.sub-menu li {
 		border-left:solid 1px #ddd;
 	}
-		#navigation .menu-section-level-3 a,
-		#navigation .menu-section-level-3 a:link,
-		#navigation .menu-section-level-3 a:visited {
+
+		#navigation ul.menu-sections li.menu-item-has-children ul.sub-menu a,
+		#navigation ul.menu-sections li.menu-item-has-children ul.sub-menu a:link,
+		#navigation ul.menu-sections li.menu-item-has-children ul.sub-menu a:visited {
 			/*border-bottom:solid 1px transparent;*/
 			border-left:solid 5px transparent; /* 90a4ae */
 		}
-		#navigation .menu-section-level-3 a:hover,
-		#navigation .menu-section-level-3 a:active,
-		#navigation .menu-section-level-3 a:focus {
+		#navigation ul.menu-sections li.menu-item-has-children ul.sub-menu a:hover,
+		#navigation ul.menu-sections li.menu-item-has-children ul.sub-menu a:active,
+		#navigation ul.menu-sections li.menu-item-has-children ul.sub-menu a:focus {
 			/*border-bottom:solid 1px transparent;*/
 			border-left:solid 5px #90a4ae;
 		}
-			#navigation .menu-section-level-3 .menu-opened a:after {
+			##navigation ul.menu-sections li.menu-item-has-children ul.sub-menu a:after {
 				content:"";
 			}
-			#navigation .menu-section-level-3 li:last-child a,
-			#navigation .menu-section-level-3 li:last-child a:link,
-			#navigation .menu-section-level-3 li:last-child a:visited {
+			#navigation ul.menu-sections li.menu-item-has-children ul.sub-menu li:last-child a,
+			#navigation ul.menu-sections li.menu-item-has-children ul.sub-menu li:last-child a:link,
+			#navigation ul.menu-sections li.menu-item-has-children ul.sub-menu li:last-child a:visited {
 				border-bottom:none;
 			}
 
@@ -1230,20 +1240,21 @@ table.gsc-table-result td {
 	}
 
 /* second-level menu */
-#section-nav ul.menu-sections ul li.expanded {
-	border-bottom:solid 1px #ccc;
+
+ul.menu-sections li.menu-item-has-children > a {
+	border-bottom:solid 1px #ccc !important;
+	display: block !important;
+	background-color:  #FFF !important;
 }
-	#section-nav ul.menu-sections ul li.expanded a {
-		border-bottom:none !important;
-	}
-#section-nav ul.menu-sections ul a.active,
-#section-nav ul.menu-sections ul li.first > a.active {
+
+#section-nav ul.menu-sections a.active,
+#section-nav ul.menu-sections li.first > a.active {
 	border-left:solid 3px #777 !important;
 	color:#000 !important;
 }
-#section-nav ul.menu-sections ul li.first > a,
-#section-nav ul.menu-sections ul li.first > a:link,
-#section-nav ul.menu-sections ul li.first > a:visited {
+#section-nav ul.menu-sections li.first > a,
+#section-nav ul.menu-sections li.first > a:link,
+#section-nav ul.menu-sections li.first > a:visited {
 	font:400 16px "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	display:block;
 	border-left:solid 3px transparent;
@@ -1253,8 +1264,8 @@ table.gsc-table-result td {
 	border-bottom:solid 1px #ccc;
 	background-color:transparent;
 }
-	#section-nav ul.menu-sections ul li.first > a:hover,
-	#section-nav ul.menu-sections ul li.first > a:active {
+	#section-nav ul.menu-sections li.first > a:hover,
+	#section-nav ul.menu-sections li.first > a:active {
 		background-color:#fff;
 		border-left:solid 3px #777;
 		color:#000;
@@ -1460,9 +1471,12 @@ table.gsc-table-result td {
 }
 
 /* Drupal System Container Tabs */
+/*
 body.logged-in .system-container {
   padding:15px 0;
 }
+*/
+
 body.not-logged-in .system-container {
   padding-top:0;
 }

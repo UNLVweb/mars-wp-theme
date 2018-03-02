@@ -1488,7 +1488,7 @@ section.hero {
         font:normal 300 18px "Roboto Slab", serif; /* 18/24 */
       }
         section.hero .hero-text p:last-child {
-          margin-bottom:0;
+          margin-bottom:25px;
         }
       /* inverse text */
       section.hero.text-black .hero-text,

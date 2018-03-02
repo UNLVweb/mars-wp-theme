@@ -15,10 +15,23 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <?php
+    // Sets default site icon if one is not specified.
+    if ( !has_site_icon() ) {
+      echo '
+      <link rel="icon" href="' . get_template_directory_uri() . '/assets/images/site_icons/cropped-unlv-logo-512x512-1-32x32.png" sizes="32x32" />
+      <link rel="icon" href="' . get_template_directory_uri() . '/assets/images/site_icons/cropped-unlv-logo-512x512-1-192x192.png" sizes="192x192" />
+      <link rel="apple-touch-icon-precomposed" href="' . get_template_directory_uri() . '/assets/images/site_icons/cropped-unlv-logo-512x512-1-180x180.png" />
+      <meta name="msapplication-TileImage" content="' . get_template_directory_uri() . '/assets/images/site_icons/cropped-unlv-logo-512x512-1-270x270.png" />
+      ';
+    }
+    ?>
+
     <?php wp_head(); ?>
   </head>
-
-  <body class="html not-front not-logged-in no-sidebars node-type-secondary-page navbar-is-fixed-top">
+ 
+  <body <?php body_class(); ?>>
 
     <div id="skip-link">
       <a href="#main-content" class="element-invisible element-focusable sr-only sr-only-focusable" tabindex="1">Skip to main content</a>
@@ -104,7 +117,8 @@
           wp_nav_menu(
             array(
               'theme_location' => 'header-menu',
-              'fallback_cb'    => 'mars_default_menu'
+              'fallback_cb'    => 'mars_default_menu',
+              'menu_class'     => 'menu-sections',
             )
           );
           ?>

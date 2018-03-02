@@ -38,29 +38,34 @@ add_action( 'customize_register', 'mars_customizer_settings' );
  */
 function mars_customizer_settings( $wp_customize ) {
 
+  // Used for information boxes used in the customizer.
+  $mars_info_text_style = 'style="padding: 15px; background-color: #fbffdb; border: solid 1px #CCC; border-radius: 5px;"';
+  $custom_homepage_description = __('<div ' . $mars_info_text_style . '>Please visit the <a href="#" target="_blank">Custom Homepage Setup Instructions</a> page before using any features within this section.</div>', 'mars');
 
   // Create homepage panel.
   $wp_customize->add_panel( 'panel_front_page', array(
       'priority'       => 100,
       'capability'     => 'edit_theme_options',
       'theme_supports' => '',
-      'title'          => __('Homepage Settings', 'mars'),
-      'description'    => __('Customize your homepage settings.<strong>To view your changes, please Publish first.</strong>', 'mars'),
+      'title'          => __('Custom Homepage Template', 'mars'),
+      'description'    => __('<p>Included with this theme is a custom homepage you can use.</p>' . $custom_homepage_description, 'mars'),
   ) );
 
   // Move "Homepage Settings" section into the "Homepage Settings" (panel_front_page) panel.
   // Customize section title and priority.
+
+  $wp_customize->get_section( 'static_front_page' )->priority  = 20;
+  /*
   $wp_customize->get_section( 'static_front_page' )->panel  = 'panel_front_page';
-  $wp_customize->get_section( 'static_front_page' )->priority  = 0;
   $wp_customize->get_section( 'static_front_page' )->title  = __( 'Homepage Display Options' );
+  */
 
   // Get Tag Line control, we use it as the Short Title.
   $wp_customize->get_control( 'blogdescription' )->description = __( 'This is used for the menu heading and also replaces your "Site Title" when your website is displayed on a mobile device or tablet.<br><strong>25 character max.</strong>' );
 
   $wp_customize->get_control( 'blogdescription' )->input_attrs = array( 'maxlength' => 25);
 
-  // Set default favicon.
-  $wp_customize->get_setting( 'site_icon' )->default = get_template_directory_uri() . '/assets/images/D65847_18.jpg';
+  $wp_customize->get_control( 'site_icon' )->description .= '<p><strong>If you do not specify a Site Icon, then a UNLV Site Icon will be used.</strong></p>'; 
 
 
   // Hero Image Options
@@ -71,6 +76,7 @@ function mars_customizer_settings( $wp_customize ) {
     'title'      => 'Hero Image Settings',
     'priority'   => 30,
     'panel'  => 'panel_front_page',
+    'description'    => $custom_homepage_description,
   ) );
 
   // Create hero image display toggle.
@@ -150,7 +156,7 @@ function mars_customizer_settings( $wp_customize ) {
     'title'      => 'Section One Options',
     'priority'   => 30,
     'panel'  => 'panel_front_page',
-    'description'    => __('Manage the content in section one of the front page.<br><br><strong>To view your changes, please Publish first.</strong>', 'mars'),
+    'description'    => $custom_homepage_description,
   ) );
 
     $wp_customize->add_setting( 'section_one_toggle_display' , array(
@@ -211,7 +217,7 @@ function mars_customizer_settings( $wp_customize ) {
     'title'      => 'Section Two Options',
     'priority'   => 30,
     'panel'  => 'panel_front_page',
-    'description'    => __('Manage the content in section two of the front page.<br><br><strong>To view your changes, please Publish first.</strong>', 'mars'),
+    'description'    => $custom_homepage_description,
   ) );
 
   $wp_customize->add_setting( 'section_two_toggle_display' , array(
@@ -290,7 +296,7 @@ function mars_customizer_settings( $wp_customize ) {
       'title'      => 'Advanced Options',
       'priority'   => 30,
       'panel'  => 'panel_front_page',
-      'description'    => __('Using HTML, create custom content for your front page. For a completely custom front page, you can hide section one, section two, and the hero image by setting their display option to "Hide"', 'mars'),
+      'description'    => $custom_homepage_description,
   ) );
 
   // Create second image caption text field.

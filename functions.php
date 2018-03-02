@@ -207,6 +207,7 @@ function mars_default_audience_menu() {
 /**
  * Provides a default menu featuring the 'Home' link, if not other menu has been provided.
  * Also, will list any pages currently in the system.
+ * Does not currently support generating submenus.
  *
  */
 function mars_default_menu() {
@@ -323,7 +324,7 @@ add_action( 'widgets_init', 'mars_widgets_init' );
  */
 function mars_scripts() {
 
-  $version = '?v=1.0';
+  $version = '?v=1.1';
 
   wp_enqueue_style( 'mars-bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' );
   wp_enqueue_style( 'mars-google-font-roboto', 'https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700|Roboto+Condensed:400,100,300,700|Roboto+Mono|Roboto+Slab:400,100,300,400,700' );
@@ -333,6 +334,7 @@ function mars_scripts() {
   wp_enqueue_style( 'mars-base', get_template_directory_uri() . '/assets/css/base.css' . $version );
   wp_enqueue_style( 'mars-layout', get_template_directory_uri() . '/assets/css/layout.css' . $version );
   wp_enqueue_style( 'mars-content', get_template_directory_uri() . '/assets/css/content.css' . $version );
+
 }
 
 add_action( 'wp_enqueue_scripts', 'mars_scripts' );
@@ -340,7 +342,7 @@ add_action( 'wp_enqueue_scripts', 'mars_scripts' );
 // Add scripts to wp_footer()
 function mars_footer_script() {
 
-  $version = '?v=1.0';
+  $version = '?v=1.3';
 
   wp_enqueue_script( 'mars-jquery-min', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js' . $version );
   wp_enqueue_script( 'mars-bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js' . $version );
@@ -353,3 +355,15 @@ function mars_footer_script() {
 
 }
 add_action( 'wp_footer', 'mars_footer_script' );
+ 
+// Add specific CSS class by filter.
+add_filter( 'body_class', function( $classes ) {
+    return array_merge( $classes, array(
+      'html',
+      'not-front',
+      'not-logged-in',
+      'no-sidebars',
+      'node-type-secondary-page',
+      'navbar-is-fixed-top',
+    ));
+} );
