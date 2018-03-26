@@ -40,7 +40,7 @@ function mars_customizer_settings( $wp_customize ) {
 
   // Used for information boxes used in the customizer.
   $mars_info_text_style = 'style="padding: 15px; background-color: #fbffdb; border: solid 1px #CCC; border-radius: 5px;"';
-  $custom_homepage_description = __('<div ' . $mars_info_text_style . '>Please visit the <a href="#" target="_blank">Custom Homepage Setup Instructions</a> page before using any features within this section.</div>', 'mars');
+  $custom_homepage_description = __('<div ' . $mars_info_text_style . '>Please visit the <a href="https://www.unlv.edu/style-guide/wp-documentation" target="_blank">Custom Homepage Setup Instructions</a> page before using any features within this section.</div>', 'mars');
 
   // Create homepage panel.
   $wp_customize->add_panel( 'panel_front_page', array(
@@ -65,7 +65,7 @@ function mars_customizer_settings( $wp_customize ) {
 
   $wp_customize->get_control( 'blogdescription' )->input_attrs = array( 'maxlength' => 25);
 
-  $wp_customize->get_control( 'site_icon' )->description .= '<p><strong>If you do not specify a Site Icon, then a UNLV Site Icon will be used.</strong></p>'; 
+  $wp_customize->get_control( 'site_icon' )->description .= '<p><strong>If you do not specify a Site Icon, then a UNLV Site Icon will be used.</strong></p>';
 
 
   // Hero Image Options
@@ -96,7 +96,7 @@ function mars_customizer_settings( $wp_customize ) {
           'hide' => 'Hide',
         ),
   ) );
-  
+
   // Create hero image upload form control.
   $wp_customize->add_setting( 'hero_image' , array(
       'transport'   => 'refresh',
@@ -109,7 +109,7 @@ function mars_customizer_settings( $wp_customize ) {
            'hero_image',
            array(
                'label'      => __( 'Hero Image', 'mars' ),
-               /*'description' => __( 'When no image selected, a default campus image is used.' ),*/               
+               /*'description' => __( 'When no image selected, a default campus image is used.' ),*/
                'section'    => 'mars_frontpage_hero_image',
                'settings'   => 'hero_image',
            )
@@ -229,7 +229,7 @@ function mars_customizer_settings( $wp_customize ) {
       'label' => 'Toggle Section Display',
       'section' => 'mars_frontpage_section_two',
       'settings' => 'section_two_toggle_display',
-      'description' => __( 'You will need to refresh the page after you publish when showing a section.' ),      
+      'description' => __( 'You will need to refresh the page after you publish when showing a section.' ),
       'type' => 'radio',
       'choices' => array(
           'show' => 'Show',
