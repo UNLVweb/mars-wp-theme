@@ -772,7 +772,7 @@ body.front .website-title {
 	}
 
 	#navigation ul.menu-sections li.menu-item-has-children > a:after {
-		content:"\f0d7"; /* f0da */
+		/*content:"\f0d7";*/ /* f0da */
 		font-family:FontAwesome;
 		position:absolute;
 		z-index:10000;
