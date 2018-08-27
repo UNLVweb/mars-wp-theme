@@ -39,8 +39,40 @@ get_header(); ?>
             <section class="bg-gray">
               <div class="container">
                 <div class="row">
+                  <?php
 
-                  <div class="col-sm-12">              
+                  // Set the default column size for the main column.
+                  // If a menu is present, this will be the right column class.
+                  $main_column_class = 'col-sm-12';
+
+                  // Set the navigation menu properties.
+                  // Set 'echo' to FALSE so it doesn't display by default.
+                  $secondary_menu = wp_nav_menu(
+                    array(
+                      'theme_location' => 'secondary-menu',
+                      'fallback_cb'    => FALSE,
+                      'menu_class'     => 'menu-sections',
+                      'echo'           => FALSE,
+                    )
+                  );
+
+                  // If there is a secondary menu, then update right column classes and
+                  // introduce a left column that will house the menu.
+                  if ($secondary_menu) {
+                    $main_column_class = 'col-sm-8 col-md-9';
+
+                    // @todo
+                    // Get the menu to style properly similar to the one located at:
+                    // https://www.unlv.edu/about/policies
+                    ?>
+                    <div class="col-sm-4 col-md-3">
+                      <?php echo $secondary_menu; ?>
+                    </div>
+                    <?php
+                  }
+                  ?>
+
+                  <div class="<?php echo $main_column_class; ?>">              
                     <?php
                     while ( have_posts() ) : the_post();
                       get_template_part( 'template-parts/content', 'page' );

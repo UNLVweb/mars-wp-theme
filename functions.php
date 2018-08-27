@@ -23,6 +23,7 @@ function mars_register_menus() {
   register_nav_menus(
     array(
       'header-menu' => __( 'Header Menu' ),
+      'secondary-menu' => __( 'Secondary Menu' ),
 /*
       'footer-menu' => __( 'Footer Menu' ),
       'topic-menu' => __( 'Topics Menu (Advanced Users)' ),
@@ -324,7 +325,7 @@ add_action( 'widgets_init', 'mars_widgets_init' );
  */
 function mars_scripts() {
 
-  $version = '?v=1.1';
+  $version = '?v=1.2';
 
   wp_enqueue_style( 'mars-bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' );
   wp_enqueue_style( 'mars-google-font-roboto', 'https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700|Roboto+Condensed:400,100,300,700|Roboto+Mono|Roboto+Slab:400,100,300,400,700' );
