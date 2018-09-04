@@ -51,6 +51,7 @@ get_header(); ?>
                     array(
                       'theme_location' => 'secondary-menu',
                       'fallback_cb'    => FALSE,
+                      'container_class'=> 'in-page-menu',
                       'menu_class'     => 'menu-sections',
                       'echo'           => FALSE,
                     )
@@ -72,7 +73,7 @@ get_header(); ?>
                   }
                   ?>
 
-                  <div class="<?php echo $main_column_class; ?>">              
+                  <div class="<?php echo $main_column_class; ?>">
                     <?php
                     while ( have_posts() ) : the_post();
                       get_template_part( 'template-parts/content', 'page' );
@@ -88,9 +89,9 @@ get_header(); ?>
               </div>
             </section>
 
-          </section>  <!-- /.block-system-main -->   
+          </section>  <!-- /.block-system-main -->
         </div> <!-- /.region-content -->
-      </div> <!-- /#content-main-->     
+      </div> <!-- /#content-main-->
     </div> <!--end #content-->
 
 <?php get_footer(); ?>
