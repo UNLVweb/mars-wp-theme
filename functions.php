@@ -28,7 +28,7 @@ function mars_register_menus() {
       'footer-menu' => __( 'Footer Menu' ),
       'topic-menu' => __( 'Topics Menu (Advanced Users)' ),
       'audience-menu' => __( 'Audiences Menu (Advanced Users)' ),
-*/            
+*/
     )
   );
 }
@@ -55,14 +55,14 @@ function mars_set_theme_mods() {
   remove_theme_mod ( 'section_one_card_text' );
   remove_theme_mod ( 'section_one_right_column_text' );
 
-  remove_theme_mod ( 'section_two_toggle_display' );  
+  remove_theme_mod ( 'section_two_toggle_display' );
   remove_theme_mod ( 'section_two_right_column_text' );
-  remove_theme_mod ( 'section_two_image' );  
-  remove_theme_mod ( 'section_two_image_caption' );  
-  remove_theme_mod ( 'section_two_image_alt' );  
-  remove_theme_mod ( 'section_two_right_column_text' );  
+  remove_theme_mod ( 'section_two_image' );
+  remove_theme_mod ( 'section_two_image_caption' );
+  remove_theme_mod ( 'section_two_image_alt' );
+  remove_theme_mod ( 'section_two_right_column_text' );
 
-  remove_theme_mod ( 'frontpage_advanced_content' ); 
+  remove_theme_mod ( 'frontpage_advanced_content' );
 
   echo '<pre>';
     print_r(get_theme_mods());
@@ -133,11 +133,11 @@ function mars_set_theme_mods() {
   if ( !isset( $theme_mods['section_two_image'] ) )
       set_theme_mod ( 'section_two_image', get_template_directory_uri() . '/assets/images/D67387_23-1.jpg' );
 
-  // Image default alt attribute. 
+  // Image default alt attribute.
   if ( !isset( $theme_mods['section_two_image_alt'] ) )
       set_theme_mod ( 'section_two_image_alt', 'Close-up, day-time shot of cube shaped U N L V sign.' );
 
-  // Default image caption. 
+  // Default image caption.
   if ( !isset( $theme_mods['section_two_image_caption'] ) )
       set_theme_mod ( 'section_two_image_caption', 'Welcome to our campus!' );
 
@@ -149,16 +149,16 @@ function mars_set_theme_mods() {
   // Section Two Defaults
   // ##############################################
 
-  // Set to blank string.  
+  // Set to blank string.
   if ( !isset( $theme_mods['frontpage_advanced_content'] ) )
-      set_theme_mod ( 'frontpage_advanced_content', '' );    
+      set_theme_mod ( 'frontpage_advanced_content', '' );
   /*
   echo '<pre>';
     print_r(get_theme_mods());
   echo '</pre>';
   */
 }
- 
+
 add_action( 'init', 'mars_set_theme_mods' );
 
 
@@ -233,7 +233,7 @@ function mars_default_menu() {
         $html .= '<a href="' . esc_url( $post_url ) . '" title="' . __( $post_title, 'mars' ) . '">';
           $html .= __( $post_title, 'mars' );
         $html .= '</a>';
-        $html .= '</li>';      
+        $html .= '</li>';
       }
     }
 
@@ -311,7 +311,7 @@ function mars_widgets_init() {
         'before_title'  => '<h4 class="card-title">',
         'after_title'   => '</h4>',
     ) );
- 
+
     register_sidebar( array(
         'name'          => __( 'Find', 'mars' ),
         'id'            => 'find',
@@ -330,11 +330,12 @@ function mars_scripts() {
   wp_enqueue_style( 'mars-bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' );
   wp_enqueue_style( 'mars-google-font-roboto', 'https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700|Roboto+Condensed:400,100,300,700|Roboto+Mono|Roboto+Slab:400,100,300,400,700' );
   wp_enqueue_style( 'mars-font-awesome-4', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css' );
-  wp_enqueue_style( 'mars-style', get_stylesheet_uri() );  
+  wp_enqueue_style( 'mars-style', get_stylesheet_uri() );
   wp_enqueue_style( 'mars-bootstrap-4-alpha', get_template_directory_uri() . '/assets/css/bootstrap-4-alpha.css' . $version );
   wp_enqueue_style( 'mars-base', get_template_directory_uri() . '/assets/css/base.css' . $version );
   wp_enqueue_style( 'mars-layout', get_template_directory_uri() . '/assets/css/layout.css' . $version );
   wp_enqueue_style( 'mars-content', get_template_directory_uri() . '/assets/css/content.css' . $version );
+  wp_enqueue_style( 'mars-in-page-menu', get_template_directory_uri() . '/assets/css/in-page-menu.css' . $version );
 
 }
 
@@ -356,7 +357,7 @@ function mars_footer_script() {
 
 }
 add_action( 'wp_footer', 'mars_footer_script' );
- 
+
 // Add specific CSS class by filter.
 add_filter( 'body_class', function( $classes ) {
     return array_merge( $classes, array(
