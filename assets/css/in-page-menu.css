@@ -118,20 +118,20 @@ ul.menu-sections li.menu-item-has-children > a {
 
 #section-nav ul.menu-sections a.active,
 #section-nav ul.menu-sections li.first > a.active {
-	border-left:solid 3px #777 !important;
+	border-left:solid 3px #777;
 	color:#000 !important;
 }
 #section-nav ul.menu-sections li.first > a,
 #section-nav ul.menu-sections li.first > a:link,
 #section-nav ul.menu-sections li.first > a:visited {
-	font:400 16px "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font:300 20px "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	display:block;
-	border-left:solid 3px transparent;
+	border-left: none !important;
 	padding:8px 10px;
-	color:#5c6888;
+	color:#333;
 	text-decoration:none;
 	border-bottom:solid 1px #ccc;
-	background-color:transparent;
+	background-color:#e2e2e4;
 }
 	#section-nav ul.menu-sections li.first > a:hover,
 	#section-nav ul.menu-sections li.first > a:active {
