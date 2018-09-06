@@ -52,10 +52,13 @@ get_header(); ?>
                       'theme_location' => 'secondary-menu',
                       'fallback_cb'    => FALSE,
                       'container_class'=> 'in-page-menu',
-                      'menu_class'     => 'menu-sections',
+                      'menu_class'     => 'menu-section-level-2',
                       'echo'           => FALSE,
                     )
                   );
+
+                  // Get the current page's slug. Used for sub-menu title.
+                  $slug = get_post_field( 'post_name', get_post() );
 
                   // If there is a secondary menu, then update right column classes and
                   // introduce a left column that will house the menu.
@@ -67,8 +70,15 @@ get_header(); ?>
                     // https://www.unlv.edu/about/policies
                     ?>
                     <div class="col-sm-4 col-md-3">
-                      <?php echo $secondary_menu; ?>
-                    </div>
+                      <nav id="section-nav" role="navigation">
+                        <ul class="menu-sections">
+                          <li class="first last expanded active-trail active">
+                            <a href="<?php echo esc_url( home_url() ); ?>/<?php echo $slug; ?>" title class="active"><?php the_title(); ?></a>
+                            <?php echo $secondary_menu; ?>
+                          </li>
+                        </ul>
+                      </div>
+                    </nav>
                     <?php
                   }
                   ?>
