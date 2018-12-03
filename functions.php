@@ -316,6 +316,16 @@ function mars_widgets_init() {
         'name'          => __( 'Find', 'mars' ),
         'id'            => 'find',
     ) );
+
+    register_sidebar( array(
+      'name'            => __( 'Before Content Widget Area' ),
+      'id'              => 'before-widget-area', 
+    ));
+
+    register_sidebar( array(
+      'name'            => __( 'After Content Widget Area' ),
+      'id'              => 'after-widget-area', 
+    ));
 }
 
 add_action( 'widgets_init', 'mars_widgets_init' );

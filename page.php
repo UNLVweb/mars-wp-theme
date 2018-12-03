@@ -41,6 +41,8 @@ get_header(); ?>
                 <div class="row">
                   <?php
 
+                  if ( dynamic_sidebar('before-widget-area') ) : else : endif;
+
                   // Set the default column size for the main column.
                   // If a menu is present, this will be the right column class.
                   $main_column_class = 'col-sm-12';
@@ -94,7 +96,7 @@ get_header(); ?>
                     endwhile; // End of the loop.
                     ?>
                   </div> <!-- /.col -->
-
+                  <?php if ( dynamic_sidebar('after-widget-area') ) : else : endif; ?>
                 </div> <!-- /.row -->
               </div>
             </section>
