@@ -311,7 +311,7 @@ function mars_widgets_init() {
         'before_title'  => '<h4 class="card-title">',
         'after_title'   => '</h4>',
     ) );
-
+    // TODO: Figure out if this widget area is still needed.
     register_sidebar( array(
         'name'          => __( 'Find', 'mars' ),
         'id'            => 'find',
@@ -319,12 +319,16 @@ function mars_widgets_init() {
 
     register_sidebar( array(
       'name'            => __( 'Before Content Widget Area' ),
-      'id'              => 'before-widget-area', 
+      'id'              => 'before-widget-area',
+      'before_widget'   => '<div class="col-sm-12">',
+      'after_widget'    => '</div>'
     ));
 
     register_sidebar( array(
       'name'            => __( 'After Content Widget Area' ),
-      'id'              => 'after-widget-area', 
+      'id'              => 'after-widget-area',
+      'before_widget'   => '<div class="col-sm-12">',
+      'after_widget'    => '</div>' 
     ));
 }
 
