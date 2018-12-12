@@ -304,7 +304,7 @@ function mars_default_footer_menu() {
 
 function mars_widgets_init() {
     register_sidebar( array(
-        'name'          => __( 'Primary Sidebar', 'mars' ),
+        'name'          => __( 'Primary Sidebar (Posts Only)', 'mars' ),
         'id'            => 'sidebar-1',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget'  => '</aside>',
