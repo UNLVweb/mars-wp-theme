@@ -41,31 +41,35 @@ get_header(); ?>
                 <div class="row">
 
                   <div class="col-sm-8">
-                            <?php
-        // Start the loop.
-        while ( have_posts() ) : the_post();
+                    <?php
+                    if ( dynamic_sidebar('before-widget-area') ) : else : endif;
 
-            the_content();  
+                    // Start the loop.
+                    while ( have_posts() ) : the_post();
 
-            // If comments are open or we have at least one comment, load up the comment template.
-            if ( comments_open() || get_comments_number() ) :
-                comments_template();
-              
-            endif;
-            
-            // Previous/next post navigation.
-            the_post_navigation( array(
-                'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'mars' ) . '</span> ' .
-                    '<span class="screen-reader-text">' . __( 'Next post:', 'mars' ) . '</span> ' .
-                    '<span class="post-title">%title</span>',
-                'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'mars' ) . '</span> ' .
-                    '<span class="screen-reader-text">' . __( 'Previous post:', 'mars' ) . '</span> ' .
-                    '<span class="post-title">%title</span>',
-            ) );
-            
-        // End the loop.
-        endwhile;
-        ?>
+                        the_content();  
+
+                        // If comments are open or we have at least one comment, load up the comment template.
+                        if ( comments_open() || get_comments_number() ) :
+                            comments_template();
+                          
+                        endif;
+                        
+                        // Previous/next post navigation.
+                        the_post_navigation( array(
+                            'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'mars' ) . '</span> ' .
+                                '<span class="screen-reader-text">' . __( 'Next post:', 'mars' ) . '</span> ' .
+                                '<span class="post-title">%title</span>',
+                            'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'mars' ) . '</span> ' .
+                                '<span class="screen-reader-text">' . __( 'Previous post:', 'mars' ) . '</span> ' .
+                                '<span class="post-title">%title</span>',
+                        ) );
+                        
+                    // End the loop.
+                    endwhile;
+
+                    if ( dynamic_sidebar('after-widget-area') ) : else : endif;
+                    ?>
                   </div> <!-- /.col -->
 
                   <div class="col-sm-4">

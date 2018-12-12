@@ -318,16 +318,16 @@ function mars_widgets_init() {
     ) );
 
     register_sidebar( array(
-      'name'            => __( 'Before Content Widget Area' ),
+      'name'            => __( 'Before Content - Widget Area' ),
       'id'              => 'before-widget-area',
-      'before_widget'   => '<div class="col-sm-12">',
+      'before_widget'   => '<div class="before-widget-area">',
       'after_widget'    => '</div>'
     ));
 
     register_sidebar( array(
-      'name'            => __( 'After Content Widget Area' ),
+      'name'            => __( 'After Content - Widget Area' ),
       'id'              => 'after-widget-area',
-      'before_widget'   => '<div class="col-sm-12">',
+      'before_widget'   => '<div class="after-widget-area">',
       'after_widget'    => '</div>' 
     ));
 }

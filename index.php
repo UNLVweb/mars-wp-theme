@@ -43,7 +43,10 @@ get_header(); ?>
                 <div class="row">
 
                   <div class="col-sm-8">
-                    <?php if ( have_posts() ) : ?>     
+                    <?php
+                    if ( dynamic_sidebar('before-widget-area') ) : else : endif;
+                    
+                    if ( have_posts() ) : ?>     
                       <?php
                       // Start the loop.
                       while ( have_posts() ) : the_post();
@@ -70,7 +73,10 @@ get_header(); ?>
                         get_template_part( 'template-parts/content', 'none' );
 
                     endif;
-                    ?>
+                   
+                    if ( dynamic_sidebar('after-widget-area') ) : else : endif;
+
+                   ?>
                   </div> <!-- /.col -->
 
                   <div class="col-sm-4">
