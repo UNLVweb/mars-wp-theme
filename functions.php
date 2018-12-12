@@ -311,11 +311,6 @@ function mars_widgets_init() {
         'before_title'  => '<h4 class="card-title">',
         'after_title'   => '</h4>',
     ) );
-    // TODO: Figure out if this widget area is still needed.
-    register_sidebar( array(
-        'name'          => __( 'Find', 'mars' ),
-        'id'            => 'find',
-    ) );
 
     register_sidebar( array(
       'name'            => __( 'Before Content - Widget Area' ),
