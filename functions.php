@@ -249,8 +249,8 @@ function mars_default_footer_menu() {
 
   echo $html = '<div class="col-sm-4">
                   <ul class="list-unstyled">
-                    <li><a href="https://www.unlv.edu/60">60th Anniversary</a></li>
                     <li><a href="https://www.unlv.edu/about/statements-compliance" title="Compliance">Compliance</a></li>
+                    <li><a href="https://www.unlv.edu/web/accessibility">Web Accessibility</a></li>
                     <li><a href="https://www.unlv.edu/diversity" title="Diversity">Diversity</a></li>
                     <li><a href="https://www.unlv.edu/toptier" title="Top Tier">Top Tier</a></li>
                     <li><a href="https://www.unlv.edu/news" title="News Center">News Center</a></li>
@@ -289,9 +289,10 @@ function mars_default_footer_menu() {
                       </ul>
                     </div><!--/.col-sm-4-->
                     <div class="col-sm-4 text-sm-right text-xs-center social-media-links">
-                      <a href="https://www.facebook.com/OfficialUNLV" title="Find us on Facebook" aria-label="Find us on Facebook"><span class="sm-footer-facebook"></span></a> <a href="https://www.instagram.com/unlv/" title="Follow us on Twitter" aria-label="Follow us on Twitter"><span class="sm-footer-instagram"></span></a> <a href="https://twitter.com/UNLV" title="Find us on Instagram" aria-label="Find us on Instagram"><span class="sm-footer-twitter"></span></a> <a href="https://www.youtube.com/user/UNLV" title="Watch us on YouTube" aria-label="Watch us on YouTube"><span class="sm-footer-youtube"></span></a>
-                    </div><!--/.col-sm-4-->
-                  </div><!--/.row-->
+<ul class="list-inline clear-margin-bottom"><li class="clear-margin-bottom"><a href="https://www.facebook.com/OfficialUNLV" title="Find us on Facebook" aria-label="Find us on Facebook"><span class="sm-footer-facebook"></span></a></li><li class="clear-margin-bottom"><a href="https://www.instagram.com/unlv" title="Find us on Instagram" aria-label="Find us on Instagram"><span class="sm-footer-instagram"></span></a></li><li class="clear-margin-bottom"><a href="https://twitter.com/UNLV" title="Follow us on Twitter" aria-label="Follow us on Twitter"><span class="sm-footer-twitter"></span></a></li><li class="clear-margin-bottom"><a href="https://www.youtube.com/user/UNLV" title="Watch us on YouTube" aria-label="Watch us on YouTube"><span class="sm-footer-youtube"></span></a></li></ul>
+<div class="text-xs padding-right-xs"><a href="https://www.unlv.edu/directories/social-media">Social Media at UNLV</a></div>
+</div><!--/.col-sm-4-->
+</div><!--/.row-->
                 </div><!--/.col-xs-12-->';
 
 } // end mars_default_footer_menu
@@ -323,7 +324,7 @@ function mars_widgets_init() {
       'name'            => __( 'After Content - Widget Area' ),
       'id'              => 'after-widget-area',
       'before_widget'   => '<div class="after-widget-area">',
-      'after_widget'    => '</div>' 
+      'after_widget'    => '</div>'
     ));
 }
 
@@ -336,9 +337,9 @@ function mars_scripts() {
 
   $version = '?v=1.2';
 
-  wp_enqueue_style( 'mars-bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' );
+  wp_enqueue_style( 'mars-bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css' );
   wp_enqueue_style( 'mars-google-font-roboto', 'https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700|Roboto+Condensed:400,100,300,700|Roboto+Mono|Roboto+Slab:400,100,300,400,700' );
-  wp_enqueue_style( 'mars-font-awesome-4', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css' );
+  wp_enqueue_style( 'mars-font-awesome-4', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
   wp_enqueue_style( 'mars-style', get_stylesheet_uri() );
   wp_enqueue_style( 'mars-bootstrap-4-alpha', get_template_directory_uri() . '/assets/css/bootstrap-4-alpha.css' . $version );
   wp_enqueue_style( 'mars-base', get_template_directory_uri() . '/assets/css/base.css' . $version );
@@ -356,7 +357,7 @@ function mars_footer_script() {
   $version = '?v=1.3';
 
   wp_enqueue_script( 'mars-jquery-min', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js' . $version );
-  wp_enqueue_script( 'mars-bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js' . $version );
+  wp_enqueue_script( 'mars-bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js' . $version );
   wp_enqueue_style( 'mars-jquery-ui-css', '//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css' . $version );
 
   wp_enqueue_script( 'jquery-ui', '//code.jquery.com/ui/1.11.4/jquery-ui.js' . $version );

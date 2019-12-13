@@ -16,5 +16,8 @@ A WordPress theme to be used for UNLV websites.
 
 == Changelog ==
 
+= 1.2 - Dec 13 2019 =
+* Updated footer.
+
 = 1.0 - Jan 19 2018 =
 * Initial release, still in development.
