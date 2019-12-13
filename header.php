@@ -42,7 +42,7 @@
           <div class="container">
             <div class="row">
               <div class="unlv-name col-xs-5">
-                <a href="/" tabindex="-1" role="presentation" aria-hidden="true">University of Nevada, Las Vegas</a>
+                <a href="https://www.unlv.edu" tabindex="-1" role="presentation" aria-hidden="true">University of Nevada, Las Vegas</a>
               </div><!--end .unlv-name-->
 
               <div id="dropdown-container" class="col-xs-7">
